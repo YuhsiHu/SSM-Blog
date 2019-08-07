@@ -49,7 +49,7 @@
                     <div class="layui-input-block">
                         名称
                         <span style="color: #FF5722; ">*</span>
-                        <input type="text" name="menuName" placeholder="如：如留言板" autocomplete="off" class="layui-input" required>
+                        <input type="text" name="menuName" placeholder="如：如留言板" autocomplete="on" class="layui-input" required>
                     </div>
                     <br>
                     <div class="layui-input-block">

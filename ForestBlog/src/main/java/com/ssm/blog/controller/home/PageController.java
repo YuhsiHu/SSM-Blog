@@ -102,18 +102,18 @@ public class PageController {
         return "Home/Page/siteMap";
     }
 
-    /**
-     * 留言板
-     *
-     * @return
-     */
-    @RequestMapping(value = "/message")
-    public String message(Model model) {
-
-        //侧边栏显示
-        //获得热评文章
-        List<Article> mostCommentArticleList = articleService.listArticleByCommentCount(8);
-        model.addAttribute("mostCommentArticleList", mostCommentArticleList);
-        return "Home/Page/message";
-    }
+//    /**
+//     * 留言板
+//     *
+//     * @return
+//     */
+//    @RequestMapping(value = "/message")
+//    public String message(Model model) {
+//
+//        //侧边栏显示
+//        //获得热评文章
+//        List<Article> mostCommentArticleList = articleService.listArticleByCommentCount(8);
+//        model.addAttribute("mostCommentArticleList", mostCommentArticleList);
+//        return "Home/Page/message";
+//    }
 }
