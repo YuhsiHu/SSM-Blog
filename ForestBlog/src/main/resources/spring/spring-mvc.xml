@@ -18,7 +18,7 @@
 
 
 
-    <context:component-scan base-package="com.liuyanzhao.ssm.blog" />
+    <context:component-scan base-package="com.ssm.blog" />
 
     <!-- 一个配置节解决映射器和适配器的配置注解配置 -->
     <mvc:annotation-driven></mvc:annotation-driven>
@@ -52,15 +52,15 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean class="com.liuyanzhao.ssm.blog.interceptor.HomeResourceInterceptor"/>
+            <bean class="com.ssm.blog.interceptor.HomeResourceInterceptor"/>
         </mvc:interceptor>
         <mvc:interceptor>
             <mvc:mapping path="/admin"/>
-            <bean class="com.liuyanzhao.ssm.blog.interceptor.SecurityInterceptor"/>
+            <bean class="com.ssm.blog.interceptor.SecurityInterceptor"/>
         </mvc:interceptor>
         <mvc:interceptor>
             <mvc:mapping path="/admin/**"/>
-            <bean class="com.liuyanzhao.ssm.blog.interceptor.SecurityInterceptor"/>
+            <bean class="com.ssm.blog.interceptor.SecurityInterceptor"/>
         </mvc:interceptor>
 
     </mvc:interceptors>

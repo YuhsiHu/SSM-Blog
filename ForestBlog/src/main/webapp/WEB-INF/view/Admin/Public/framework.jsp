@@ -48,11 +48,11 @@
                     ${sessionScope.user.userName}
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="/admin/user/profile/${sessionScope.user.userId}">基本资料</a></dd>
+                    <dd><a href="/admin/user/profile/">基本资料</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item">
-                <a href="/admin/logout">退了</a>
+                <a href="/admin/logout">退出</a>
             </li>
         </ul>
     </div>
@@ -125,11 +125,6 @@
 
             </rapid:block>
         </div>
-    </div>
-
-    <div class="layui-footer">
-        <!-- 底部固定区域 -->
-        © <a href="http://blog.liuyanzhao.com">言曌博客</a> 2017  欢迎加入开发者交流群 590480292，博主免费回答大家日常问题。同时博主代做毕设，解决开发问题，详情参看 <a href="https://liuyanzhao.com/bulletin/my-service/" target="_blank">有偿服务</a>
     </div>
 </div>
 
