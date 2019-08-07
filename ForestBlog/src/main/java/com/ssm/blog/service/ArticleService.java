@@ -45,7 +45,7 @@ public interface ArticleService {
     Integer countArticleByCategoryId(Integer categoryId);
 
     /**
-     * 统计有这个表情的文章数
+     * 统计有这个标签的文章数
      *
      * @param tagId 标签ID
      * @return 数量
@@ -214,4 +214,11 @@ public interface ArticleService {
      * @return 列表
      */
     List<Article> listAllNotWithContent();
+
+    /**
+     *添加文章草稿
+     *
+     * @param draft 文章草稿
+     */
+    void insertDraft(Article draft);
 }

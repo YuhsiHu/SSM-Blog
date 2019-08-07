@@ -208,6 +208,25 @@ public class BackArticleController {
         return "redirect:/admin/article";
     }
 
+    /**
+     * 后台添加文章草稿
+     *
+     * @param articleParam
+     * @return
+     */
+    @RequestMapping(value = "/insertDraft", method = RequestMethod.POST)
+    public String insertDraftSubmit(HttpSession session, ArticleParam articleParam) {
+        Article draft = new Article();
+        //用户ID
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            draft.setArticleUserId(user.getUserId());
+        }
+        draft.setArticleTitle(articleParam.getArticleTitle());
+        draft.setArticleContent(articleParam.getArticleContent());
+        articleService.insertDraft(draft);
+        return "redirect:/admin/article";
+    }
 
 }
 

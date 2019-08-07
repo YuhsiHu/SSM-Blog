@@ -324,4 +324,22 @@
         ORDER BY article_id DESC
         LIMIT #{value}
     </select>
+
+    <insert id="insertDraft" parameterType="com.ssm.blog.entity.Article" useGeneratedKeys="true"
+            keyProperty="articleId">
+        insert into
+        <include refid="tb"/>
+        (article_user_id, article_title,
+        article_view_count, article_comment_count,
+        article_like_count, article_create_time, article_update_time,
+        article_is_comment, article_status, article_order,
+        article_content, article_summary)
+        values (#{articleUserId,jdbcType=INTEGER}, #{articleTitle,jdbcType=VARCHAR},
+        #{articleViewCount,jdbcType=INTEGER},
+        #{articleCommentCount,jdbcType=INTEGER},
+        #{articleLikeCount,jdbcType=INTEGER}, #{articleCreateTime,jdbcType=TIMESTAMP},
+        #{articleUpdateTime,jdbcType=TIMESTAMP},
+        #{articleIsComment,jdbcType=INTEGER}, #{articleStatus,jdbcType=INTEGER}, #{articleOrder,jdbcType=INTEGER},
+        #{articleContent,jdbcType=LONGVARCHAR}, #{articleSummary,jdbcType=VARCHAR})
+    </insert>
 </mapper>

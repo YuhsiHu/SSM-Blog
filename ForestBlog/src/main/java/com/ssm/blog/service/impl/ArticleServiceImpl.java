@@ -264,5 +264,20 @@ public class ArticleServiceImpl implements ArticleService {
         return articleMapper.listAllNotWithContent();
     }
 
+    @Override
+    public void insertDraft(Article draft) {
+        //添加草稿
+        draft.setArticleCreateTime(new Date());
+        draft.setArticleUpdateTime(new Date());
+        draft.setArticleIsComment(ArticleCommentStatus.ALLOW.getValue());
+        draft.setArticleViewCount(0);
+        draft.setArticleLikeCount(0);
+        draft.setArticleCommentCount(0);
+        draft.setArticleOrder(1);
+        draft.setArticleStatus(0);
+        articleMapper.insertDraft(draft);
+
+    }
+
 
 }

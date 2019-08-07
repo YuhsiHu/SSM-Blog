@@ -204,4 +204,10 @@ public interface ArticleMapper {
      * @return 影响行数
      */
     Integer deleteBatch(@Param("ids") List<Integer> ids);
+
+    /**
+     * 添加草稿
+     * @param draft 文章草稿
+     */
+    Integer insertDraft(Article draft);
 }

@@ -287,7 +287,7 @@
             <div id="dashboard_quick_press" class="postbox ">
                 <div class="inside">
                     <form name="post" method="post" id="insertDraftForm"
-                          class="initial-form hide-if-no-js" action="/admin/article/insertDraftSubmit">
+                          class="initial-form hide-if-no-js" action="/admin/article/insertDraft">
 
                         <div class="layui-form-item">
                             <div class="layui-input-block">
