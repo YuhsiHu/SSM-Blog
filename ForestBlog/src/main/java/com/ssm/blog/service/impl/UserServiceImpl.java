@@ -12,9 +12,6 @@ import java.util.List;
 
 /**
  * 用户管理
- *
- * @author 言曌
- * @date 2017/8/24
  */
 @Service
 public class UserServiceImpl implements UserService {
@@ -25,15 +22,6 @@ public class UserServiceImpl implements UserService {
     @Autowired(required = false)
     private ArticleMapper articleMapper;
 
-    @Override
-    public List<User> listUser() {
-        List<User> userList = userMapper.listUser();
-        for (int i = 0; i < userList.size(); i++) {
-            Integer articleCount = articleMapper.countArticleByUser(userList.get(i).getUserId());
-            userList.get(i).setArticleCount(articleCount);
-        }
-        return userList;
-    }
 
     @Override
     public User getUserById(Integer id) {
@@ -43,18 +31,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updateUser(User user) {
         userMapper.update(user);
-    }
-
-    @Override
-    public void deleteUser(Integer id) {
-        userMapper.deleteById(id);
-    }
-
-    @Override
-    public User insertUser(User user) {
-        user.setUserRegisterTime(new Date());
-        userMapper.insert(user);
-        return user;
     }
 
     @Override

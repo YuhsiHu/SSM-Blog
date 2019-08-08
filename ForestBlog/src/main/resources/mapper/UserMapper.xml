@@ -29,24 +29,6 @@
         where user_id = #{userId,jdbcType=INTEGER}
     </select>
 
-    <delete id="deleteById" parameterType="java.lang.Integer">
-        delete from
-        <include refid="tb"/>
-        where user_id = #{userId,jdbcType=INTEGER}
-    </delete>
-
-    <insert id="insert" parameterType="com.ssm.blog.entity.User" useGeneratedKeys="true" keyProperty="userId">
-        insert into
-        <include refid="tb"/>
-        (user_id, user_name, user_pass,
-        user_nickname, user_email, user_url,
-        user_avatar, user_last_login_ip, user_register_time,
-        user_last_login_time, user_status)
-        values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userPass,jdbcType=VARCHAR},
-        #{userNickname,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, #{userUrl,jdbcType=VARCHAR},
-        #{userAvatar,jdbcType=VARCHAR}, #{userLastLoginIp,jdbcType=VARCHAR}, #{userRegisterTime,jdbcType=TIMESTAMP},
-        #{userLastLoginTime,jdbcType=TIMESTAMP}, #{userStatus,jdbcType=INTEGER})
-    </insert>
 
     <update id="update" parameterType="com.ssm.blog.entity.User">
         update
@@ -66,15 +48,6 @@
         where user_id = #{userId,jdbcType=INTEGER}
     </update>
 
-    <!--用户列表查询-->
-    <select id="listUser" parameterType="com.ssm.blog.entity.User"
-            resultType="com.ssm.blog.entity.User">
-        SELECT
-        <include refid="Base_Column_List"/>
-        FROM
-        <include refid="tb"/>
-        ORDER BY `user_status` ASC
-    </select>
 
     <!--根据用户名或邮箱获得用户-->
     <select id="getUserByNameOrEmail" parameterType="String" resultType="com.ssm.blog.entity.User">

@@ -48,7 +48,7 @@
         comment_ip, comment_create_time, comment_role)
         values (#{commentPid,jdbcType=INTEGER}, #{commentPname,jdbcType=VARCHAR}, #{commentArticleId,jdbcType=INTEGER},
         #{commentAuthorName,jdbcType=VARCHAR}, #{commentAuthorEmail,jdbcType=VARCHAR},
-        #{commentAuthorUrl,jdbcType=VARCHAR},#{commentAuthorAvatar}, #{commentContent,jdbcType=VARCHAR},
+        #{commentAuthorUrl,jdbcType=VARCHAR},#{commentAuthorAvatar,jdbcType=VARCHAR}, #{commentContent,jdbcType=VARCHAR},
         #{commentAgent,jdbcType=VARCHAR},
         #{commentIp,jdbcType=VARCHAR}, #{commentCreateTime,jdbcType=TIMESTAMP}, #{commentRole,jdbcType=INTEGER})
     </insert>
