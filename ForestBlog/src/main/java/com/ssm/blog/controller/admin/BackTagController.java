@@ -15,17 +15,17 @@ import java.util.List;
 
 
 /**
- * @author liuyanzhao
+ * 后台标签controller
  */
 @Controller
 @RequestMapping("/admin/tag")
 public class BackTagController {
 
     @Autowired
-    private ArticleService articleService;
+    private ArticleService articleService;//文章服务
 
     @Autowired
-    private TagService tagService;
+    private TagService tagService;//标签服务
 
     /**
      * 后台标签列表显示

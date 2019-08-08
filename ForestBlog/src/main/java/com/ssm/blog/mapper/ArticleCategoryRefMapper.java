@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * 文章分类关联表Mapper
- * @author liuyanzhao
+ *
  */
 @Mapper
 public interface ArticleCategoryRefMapper {

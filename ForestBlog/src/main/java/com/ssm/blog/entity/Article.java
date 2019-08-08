@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author liuyanzhao
+ * 文章实体类
  */
 @Data
 public class Article implements Serializable{

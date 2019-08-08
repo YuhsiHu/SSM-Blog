@@ -3,8 +3,7 @@ package com.ssm.blog.enums;
 import lombok.Data;
 
 /**
- * @author 言曌
- * @date 2018/11/17 下午4:47
+ * 分类状态
  */
 
 public enum CategoryStatus {

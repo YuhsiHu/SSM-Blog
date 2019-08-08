@@ -5,9 +5,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
-    <rapid:override name="title">
-        - 公告列表
-    </rapid:override>
+<rapid:override name="title">
+    - 公告列表
+</rapid:override>
 <rapid:override name="header-style">
     <style>
         /*覆盖 layui*/
@@ -17,7 +17,7 @@
         }
 
         .layui-btn {
-            margin: 2px 0!important;
+            margin: 2px 0 !important;
         }
     </style>
 </rapid:override>
@@ -31,60 +31,61 @@
         </span>
     </blockquote>
 
+    <!-- 公告列表 -->
+    <table class="layui-table">
+        <colgroup>
+            <col width="400">
+            <col width="50">
+            <col width="100">
+            <col width="100">
+            <col width="50">
+        </colgroup>
+        <thead>
+        <tr>
+            <th>标题</th>
+            <th>Order</th>
+            <th>状态</th>
+            <th>操作</th>
+            <td>ID</td>
+        </tr>
+        </thead>
 
-            <table class="layui-table" >
-                <colgroup>
-                    <col width="400">
-                    <col width="50">
-                    <col width="100">
-                    <col width="100">
-                    <col width="50">
-                </colgroup>
-                <thead>
-                <tr>
-                    <th>标题</th>
-                    <th>Order</th>
-                    <th>状态</th>
-                    <th>操作</th>
-                    <td>ID</td>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${noticeList}" var="c">
+        <tbody>
+        <c:forEach items="${noticeList}" var="c">
+            <tr>
+                <td>
+                    <a href="/notice/${c.noticeId}" target="_blank">${c.noticeTitle}</a>
+                </td>
+                <td>
+                        ${c.noticeOrder}
+                </td>
+                <td>
+                    <c:choose>
+                        <c:when test="${c.noticeStatus == 1}">
+                            显示
+                        </c:when>
+                        <c:otherwise>
+                            <span style="color:#FF5722;">隐藏</span>
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+                <td>
+                    <a href="/admin/notice/edit/${c.noticeId}" class="layui-btn layui-btn-mini">编辑</a>
+                    <a href="/admin/notice/delete/${c.noticeId}" class="layui-btn layui-btn-danger layui-btn-mini"
+                       onclick="return confirmDelete()">删除</a>
+                </td>
+                <td>${c.noticeId}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 
-                    <tr>
-                        <td>
-                            <a href="/notice/${c.noticeId}" target="_blank">${c.noticeTitle}</a>
-                        </td>
-                        <td>
-                                ${c.noticeOrder}
-                        </td>
-                        <td>
-                            <c:choose>
-                                <c:when test="${c.noticeStatus == 1}">
-                                    显示
-                                </c:when>
-                                <c:otherwise>
-                                    <span style="color:#FF5722;">隐藏</span>
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-                            <a href="/admin/notice/edit/${c.noticeId}" class="layui-btn layui-btn-mini">编辑</a>
-                            <a href="/admin/notice/delete/${c.noticeId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
-                        </td>
-                        <td >${c.noticeId}</td>
-                    </tr>
-
-                </c:forEach>
-                </tbody>
-            </table>
-            <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
-                <ul>
-                    <li>Order的大小决定显示的顺序</li>
-                </ul>
-            </blockquote>
+    <blockquote class="layui-elem-quote layui-quote-nm">
+        温馨提示：
+        <ul>
+            <li>Order的大小决定显示的顺序</li>
+        </ul>
+    </blockquote>
 
 
 </rapid:override>
@@ -94,4 +95,4 @@
     </script>
 </rapid:override>
 
-<%@ include file="../Public/framework.jsp"%>
+<%@ include file="../Public/framework.jsp" %>

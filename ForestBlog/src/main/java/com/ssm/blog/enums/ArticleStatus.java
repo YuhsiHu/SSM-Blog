@@ -1,10 +1,8 @@
 package com.ssm.blog.enums;
 
 /**
- * @author 言曌
- * @date 2018/11/17 下午4:47
+ * 文章状态
  */
-
 public enum ArticleStatus {
 
     PUBLISH(1, "已发布"),

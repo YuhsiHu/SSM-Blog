@@ -1,10 +1,8 @@
 package com.ssm.blog.enums;
 
 /**
- * @author 言曌
- * @date 2018/11/17 下午4:47
+ * 公告状态
  */
-
 public enum NoticeStatus {
 
     NORMAL(1, "显示"),

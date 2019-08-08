@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * 文章标签关联表Mapper
- * @author liuyanzhao
+ *
  */
 @Mapper
 public interface ArticleTagRefMapper {

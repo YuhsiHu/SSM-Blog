@@ -15,14 +15,14 @@ import java.util.List;
 
 
 /**
- * @author liuyanzhao
+ * 后台链接controller
  */
 @Controller
 @RequestMapping("/admin/link")
 public class BackLinkController {
 
     @Autowired
-    private LinkService linkService;
+    private LinkService linkService;//链接服务
 
     /**
      * 后台链接列表显示

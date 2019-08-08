@@ -10,9 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
+ * 链接Service实现
  *
- * @author 言曌
- * @date 2017/9/4
  */
 @Service
 public class LinkServiceImpl implements LinkService {

@@ -16,14 +16,14 @@ import java.util.Objects;
 
 
 /**
- * @author liuyanzhao
+ * 后台页面controller
  */
 @Controller
 @RequestMapping("/admin/page")
 public class BackPageController {
 
     @Autowired
-    private PageService pageService;
+    private PageService pageService;//页面服务
 
     /**
      * 后台页面列表显示

@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author liuyanzhao
+ * 链接实体类
  */
 @Data
 public class Link  implements Serializable{

@@ -9,8 +9,7 @@ import java.util.List;
 /**
  * 文章Service
  *
- * @author 言曌
- * @date 2017/8/24
+ *
  */
 public interface ArticleService {
 

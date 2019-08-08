@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 文章分类关联表
  *
- * @author liuyanzhao
+ *
  */
 @Data
 public class ArticleCategoryRef implements Serializable{

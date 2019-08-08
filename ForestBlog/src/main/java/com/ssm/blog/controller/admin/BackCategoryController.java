@@ -18,18 +18,17 @@ import java.util.List;
 
 
 /**
- * @author liuyanzhao
+ * 后台分类controller
  */
 @Controller
 @RequestMapping("/admin/category")
 public class BackCategoryController {
 
     @Autowired
-    private ArticleService articleService;
-
+    private ArticleService articleService;//文章服务
 
     @Autowired
-    private CategoryService categoryService;
+    private CategoryService categoryService;//分类服务
 
     /**
      * 后台分类列表显示

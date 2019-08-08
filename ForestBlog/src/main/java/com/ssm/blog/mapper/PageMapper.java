@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * @author liuyanzhao
+ * 页面mapper
  */
 @Mapper
 public interface PageMapper {

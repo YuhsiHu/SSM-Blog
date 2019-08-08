@@ -27,19 +27,19 @@ import java.util.List;
 
 
 /**
- * @author liuyanzhao
+ * 后台文章controller
  */
 @Controller
 @RequestMapping("/admin/article")
 public class BackArticleController {
     @Autowired
-    private ArticleService articleService;
+    private ArticleService articleService;//文章服务
 
     @Autowired
-    private TagService tagService;
+    private TagService tagService;//标签服务
 
     @Autowired
-    private CategoryService categoryService;
+    private CategoryService categoryService;//分类服务
 
     /**
      * 后台文章列表显示

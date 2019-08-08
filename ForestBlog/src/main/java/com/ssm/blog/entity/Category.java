@@ -6,7 +6,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author liuyanzhao
+ * 分类实体类
  */
 @Data
 public class Category implements Serializable {

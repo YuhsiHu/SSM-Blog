@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 /**
- * @author liuyanzhao
+ * 标签mapper
  */
 @Mapper
 public interface TagMapper {

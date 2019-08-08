@@ -23,6 +23,7 @@
 
     <form class="layui-form"  method="post" id="myForm" action="/admin/article/insertSubmit">
 
+        <!-- 文章标题 -->
         <div class="layui-form-item">
             <label class="layui-form-label">标题 <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
@@ -30,6 +31,7 @@
             </div>
         </div>
 
+        <!-- 文章内容 -->
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">内容 <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
@@ -38,6 +40,7 @@
 
         </div>
 
+        <!-- 文章分类 -->
         <div class="layui-form-item">
             <label class="layui-form-label">分类 <span style="color: #FF5722; ">*</span> </label>
             <div class="layui-input-inline">
@@ -57,6 +60,7 @@
             </div>
         </div>
 
+        <!-- 文章标签 -->
         <div class="layui-form-item" pane="">
             <label class="layui-form-label">标签</label>
             <div class="layui-input-block">
@@ -65,6 +69,8 @@
                 </c:forEach>
             </div>
         </div>
+
+        <!-- 文章状态 -->
         <div class="layui-form-item">
             <label class="layui-form-label">状态</label>
             <div class="layui-input-block">
@@ -72,6 +78,8 @@
                 <input type="radio" name="articleStatus" value="0" title="草稿" >
             </div>
         </div>
+
+        <!-- 提交文章 -->
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
@@ -83,7 +91,6 @@
             1、文章内容的数据表字段类型为MEDIUMTEXT,每篇文章内容请不要超过500万字 <br>
             2、写文章之前，请确保标签和分类存在，否则可以先新建；请勿刷新页面，博客不会自动保存 <br>
             3、插入代码前，可以点击 <a href="http://liuyanzhao.com/code-highlight.html" target="_blank">代码高亮</a>,将代码转成HTML格式
-
         </blockquote>
 
     </form>

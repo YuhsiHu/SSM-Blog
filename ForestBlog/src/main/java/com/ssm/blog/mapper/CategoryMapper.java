@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * @author liuyanzhao
+ * 文章分类mapper
  */
 @Mapper
 public interface CategoryMapper {

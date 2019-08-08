@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author liuyanzhao
+ * 公告实体类
  */
 @Data
 public class Notice implements Serializable{

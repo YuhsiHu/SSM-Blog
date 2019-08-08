@@ -61,7 +61,8 @@
                                target="_blank">
                                     ${a.articleTitle}
 
-                            </a></td>
+                            </a>
+                        </td>
                         <td>
                             <c:forEach items="${a.categoryList}" var="c">
                                 <a href="/category/${c.categoryId}"

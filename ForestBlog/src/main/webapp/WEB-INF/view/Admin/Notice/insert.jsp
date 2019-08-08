@@ -5,9 +5,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
-    <rapid:override name="title">
-        - 添加公告
-    </rapid:override>
+<rapid:override name="title">
+    - 添加公告
+</rapid:override>
 <rapid:override name="header-style">
     <style>
 
@@ -24,35 +24,39 @@
         </span>
     </blockquote>
 
-    <form class="layui-form"  method="post" id="myForm" action="/admin/notice/insertSubmit">
+    <!-- 添加公告 -->
+    <form class="layui-form" method="post" id="myForm" action="/admin/notice/insertSubmit">
+
+        <!-- 公告标题 -->
         <div class="layui-form-item">
-            <label class="layui-form-label">标题  <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">标题 <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
                 <input type="text" name="noticeTitle" lay-verify="title" id="title" class="layui-input" required>
             </div>
         </div>
 
+        <!-- 公告内容 -->
         <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">内容  <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">内容 <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
-                <textarea class="layui-textarea layui-hide" name="noticeContent" lay-verify="content" id="content" required></textarea>
+                <textarea class="layui-textarea layui-hide" name="noticeContent" lay-verify="content" id="content"
+                          required></textarea>
             </div>
         </div>
-        
+
+        <!-- 添加 -->
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit="" lay-filter="" >添加</button>
+                <button class="layui-btn" lay-submit="" lay-filter="">添加</button>
             </div>
         </div>
     </form>
 
 
-
-
 </rapid:override>
 <rapid:override name="footer-script">
     <script>
-        layui.use(['form', 'layedit', 'laydate'], function() {
+        layui.use(['form', 'layedit', 'laydate'], function () {
             var form = layui.form
                 , layer = layui.layer
                 , layedit = layui.layedit
@@ -66,7 +70,7 @@
                         return '标题至少得5个字符啊';
                     }
                 }
-                ,content: function (value) {
+                , content: function (value) {
                     layedit.sync(editIndex);
                 }
             });
@@ -75,13 +79,13 @@
             layedit.set({
                 uploadImage: {
                     url: '/admin/upload/img' //接口url
-                    ,type: 'post' //默认post
+                    , type: 'post' //默认post
                 }
             });
 
             //创建一个编辑器
-            var editIndex = layedit.build('content',{
-                    height:350,
+            var editIndex = layedit.build('content', {
+                    height: 350,
                 }
             );
 
@@ -90,4 +94,4 @@
     </script>
 </rapid:override>
 
-<%@ include file="../Public/framework.jsp"%>
+<%@ include file="../Public/framework.jsp" %>

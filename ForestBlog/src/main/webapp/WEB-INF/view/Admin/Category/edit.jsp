@@ -26,6 +26,7 @@
               <a><cite>编辑分类</cite></a>
         </span>
     </blockquote>
+
     <div class="layui-row">
         <div class="layui-col-md4" >
             <form class="layui-form"  method="post" id="myForm" action="/admin/category/editSubmit">
@@ -150,9 +151,6 @@
         </div>
 
     </div>
-
-
-
 
 
 

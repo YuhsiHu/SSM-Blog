@@ -22,8 +22,6 @@ import java.util.List;
 /**
  * 文章Servie实现
  *
- * @author 言曌
- * @date 2017/8/24
  */
 @Service
 @Slf4j

@@ -5,26 +5,30 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
-    <rapid:override name="title">
-        - 分类列表
-    </rapid:override>
+<rapid:override name="title">
+    - 分类列表
+</rapid:override>
 <rapid:override name="header-style">
     <style>
         /*覆盖 layui*/
         .layui-input-block {
-            margin:0px 10px;
+            margin: 0px 10px;
         }
+
         .layui-table {
             margin-top: 0;
         }
+
         .layui-col-md4 {
-            padding:10px;
+            padding: 10px;
         }
+
         .layui-col-md8 {
-            padding:10px;
+            padding: 10px;
         }
+
         .layui-btn {
-            margin: 2px 0!important;
+            margin: 2px 0 !important;
         }
     </style>
 </rapid:override>
@@ -38,16 +42,18 @@
               <a><cite>添加分类</cite></a>
         </span>
     </blockquote>
+
     <div class="layui-row">
         <div class="layui-col-md4">
-            <form class="layui-form"  method="post" id="myForm" action="/admin/category/insertSubmit">
+            <form class="layui-form" method="post" id="myForm" action="/admin/category/insertSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <strong>添加分类</strong>
                     </div>
                     <div class="layui-input-block">
                         名称 <span style="color: #FF5722; ">*</span>
-                        <input type="text" name="categoryName" placeholder="请输入分类名称" autocomplete="off" class="layui-input" required>
+                        <input type="text" name="categoryName" placeholder="请输入分类名称" autocomplete="off"
+                               class="layui-input" required>
                     </div>
                     <br>
                     <div class="layui-input-block">
@@ -64,12 +70,14 @@
                     <br>
                     <div class="layui-input-block">
                         分类描述
-                        <input type="text" name="categoryDescription" placeholder="请输入分类描述" autocomplete="off" class="layui-input" >
+                        <input type="text" name="categoryDescription" placeholder="请输入分类描述" autocomplete="off"
+                               class="layui-input">
                     </div>
                     <br>
                     <div class="layui-input-block">
                         图标样式
-                        <input type="text" name="categoryIcon" placeholder="请输入图标样式,如 fa fa-coffee" autocomplete="off" class="layui-input" >
+                        <input type="text" name="categoryIcon" placeholder="请输入图标样式,如 fa fa-coffee" autocomplete="off"
+                               class="layui-input">
                     </div>
                     <br>
                     <div class="layui-input-block">
@@ -78,8 +86,10 @@
                 </div>
             </form>
         </div>
-        <div class="layui-col-md8" >
-            <table class="layui-table" >
+
+        <!-- 分类列表 -->
+        <div class="layui-col-md8">
+            <table class="layui-table">
                 <colgroup>
                     <col width="300">
                     <col width="100">
@@ -110,7 +120,9 @@
                             <td>
                                 <a href="/admin/category/edit/${c.categoryId}" class="layui-btn layui-btn-mini">编辑</a>
                                 <c:if test="${c.articleCount==0}">
-                                    <a href="/admin/category/delete/${c.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                    <a href="/admin/category/delete/${c.categoryId}"
+                                       class="layui-btn layui-btn-danger layui-btn-mini"
+                                       onclick="return confirmDelete()">删除</a>
                                 </c:if>
                             </td>
                             <td>${c.categoryId}</td>
@@ -126,9 +138,12 @@
                                         <a href="/category/${c2.categoryId}" target="_blank">${c2.articleCount}</a>
                                     </td>
                                     <td>
-                                        <a href="/admin/category/edit/${c2.categoryId}" class="layui-btn layui-btn-mini">编辑</a>
+                                        <a href="/admin/category/edit/${c2.categoryId}"
+                                           class="layui-btn layui-btn-mini">编辑</a>
                                         <c:if test="${c2.articleCount==0}">
-                                            <a href="/admin/category/delete/${c2.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                            <a href="/admin/category/delete/${c2.categoryId}"
+                                               class="layui-btn layui-btn-danger layui-btn-mini"
+                                               onclick="return confirmDelete()">删除</a>
                                         </c:if>
                                     </td>
                                     <td class="cate-parent">${c2.categoryId}</td>
@@ -137,11 +152,10 @@
                             </c:if>
                         </c:forEach>
                     </c:if>
-
-
                 </c:forEach>
                 </tbody>
             </table>
+
             <blockquote class="layui-elem-quote layui-quote-nm">
                 温馨提示：
                 <ul>
@@ -153,13 +167,9 @@
     </div>
 
 
-
-
-
-
 </rapid:override>
 <rapid:override name="footer-script">
 
 </rapid:override>
 
-<%@ include file="../Public/framework.jsp"%>
+<%@ include file="../Public/framework.jsp" %>

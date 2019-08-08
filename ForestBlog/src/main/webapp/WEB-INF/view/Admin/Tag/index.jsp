@@ -37,8 +37,11 @@
               <a><cite>标签列表</cite></a>
         </span>
     </blockquote>
+
     <div class="layui-row">
         <div class="layui-col-md4">
+
+            <!-- 添加标签 -->
             <form class="layui-form"  method="post" id="myForm" action="/admin/tag/insertSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
@@ -59,6 +62,7 @@
                     </div>
                 </div>
             </form>
+
             <blockquote class="layui-elem-quote layui-quote-nm">
                 温馨提示：
                 <ul>
@@ -67,6 +71,8 @@
                 </ul>
             </blockquote>
         </div>
+
+        <!-- 标签列表 -->
         <div class="layui-col-md8" >
 
             <table class="layui-table" >
@@ -107,6 +113,7 @@
                 </c:forEach>
                 </tbody>
             </table>
+
             <blockquote class="layui-elem-quote layui-quote-nm">
                 温馨提示：
                 <ul>

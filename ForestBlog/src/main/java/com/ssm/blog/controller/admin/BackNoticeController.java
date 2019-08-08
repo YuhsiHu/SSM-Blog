@@ -14,13 +14,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Date;
 import java.util.List;
 
-
+/**
+ * 后台公告controller
+ */
 @Controller
 @RequestMapping("/admin/notice")
 public class BackNoticeController {
 
     @Autowired
-    private NoticeService noticeService;
+    private NoticeService noticeService;//公告服务
 
     /**
      * 后台公告列表显示
@@ -29,6 +31,7 @@ public class BackNoticeController {
      */
     @RequestMapping(value = "")
     public String index(Model model) {
+
         List<Notice> noticeList = noticeService.listNotice(null);
         model.addAttribute("noticeList", noticeList);
         return "Admin/Notice/index";

@@ -10,7 +10,6 @@ import java.util.List;
 /**
  * 文章Mapper
  *
- * @author liuyanzhao
  */
 @Mapper
 public interface ArticleMapper {

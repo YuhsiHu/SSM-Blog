@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author liuyanzhao
+ * 页面实体类
  */
 @Data
 public class Page implements Serializable{

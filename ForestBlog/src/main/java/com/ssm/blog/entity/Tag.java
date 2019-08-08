@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author liuyanzhao
+ * 标签实体类
  */
 @Data
 public class Tag implements Serializable{

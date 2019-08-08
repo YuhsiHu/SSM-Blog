@@ -7,8 +7,7 @@ import java.util.List;
 
 /**
  *
- * @author 言曌
- * @date 2017/9/2
+ * 标签Service
  */
 public interface TagService {
 

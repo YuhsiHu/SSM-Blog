@@ -24,8 +24,10 @@
         </span>
     </blockquote>
 
+    <!-- 编辑公告 -->
     <form class="layui-form"  method="post" id="myForm" action="/admin/notice/editSubmit">
         <input type="hidden" name="noticeId" value="${notice.noticeId}">
+        <!-- 公告标题 -->
         <div class="layui-form-item">
             <label class="layui-form-label">标题  <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
@@ -33,12 +35,15 @@
             </div>
         </div>
 
+        <!-- 公告内容 -->
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">内容  <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
                 <textarea class="layui-textarea layui-hide" name="noticeContent" id="content" required>${notice.noticeContent}</textarea>
             </div>
         </div>
+
+        <!-- 公告order-->
         <div class="layui-form-item">
             <label class="layui-form-label">Order </label>
             <div class="layui-input-inline">
@@ -46,14 +51,17 @@
             </div>
             <div class="layui-form-mid layui-word-aux">输入1-10的数字,order越大排序越前</div>
         </div>
+
+        <!-- 公告状态 -->
         <div class="layui-form-item">
             <label class="layui-form-label">状态</label>
             <div class="layui-input-block">
                 <input type="radio" name="noticeStatus" value="1" title="显示" <c:if test="${notice.noticeStatus==1}">checked</c:if>>
                 <input type="radio" name="noticeStatus" value="0" title="隐藏" <c:if test="${notice.noticeStatus==0}">checked</c:if>>
             </div>
-
         </div>
+
+        <!-- 保存 -->
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit="" lay-filter="" type="submit">保存</button>
