@@ -46,7 +46,7 @@
 
 .pagination .current {
     background-color: #398898;
-    color: #ffffff;
+    color: #fff;
     border: 1px solid #398898;
 }
 .pagination .dots {
@@ -85,7 +85,7 @@ table td {
     vertical-align: top;
 }
 table .layui-btn {
-    color:#ffffff!important;
+    color:#fff!important;
 }
 
 /*首页 start*/
