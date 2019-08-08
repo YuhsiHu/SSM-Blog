@@ -11,6 +11,7 @@ import com.ssm.blog.entity.Tag;
 import com.ssm.blog.entity.User;
 import com.ssm.blog.service.*;
 import com.ssm.blog.service.*;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +22,6 @@ import java.util.List;
 /**
  * 文章的controller
  *
- * @author 言曌
- * @date 2017/8/24
  */
 @Controller
 public class ArticleController {
@@ -53,9 +52,14 @@ public class ArticleController {
 
         //文章信息，分类，标签，作者，评论
         Article article = articleService.getArticleByStatusAndId(ArticleStatus.PUBLISH.getValue(), articleId);
+
         if (article == null) {
             return "Home/Error/404";
         }
+
+        //对文章内容封装，以便识别文章中的html代码
+        String str = StringEscapeUtils.unescapeHtml3(article.getArticleContent());
+        article.setArticleContent(str);
 
         //用户信息
         User user = userService.getUserById(article.getArticleUserId());

@@ -6,7 +6,7 @@
          pageEncoding="UTF-8" %>
 
 <%--导航 start--%>
-<header id="masthead" class="site-header">
+<header id="masthead" class="site-header" c>
     <%--顶部菜单 start--%>
     <nav id="top-header">
         <div class="top-nav">
