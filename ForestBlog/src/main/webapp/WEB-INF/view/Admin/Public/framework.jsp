@@ -8,7 +8,6 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <link rel="shortcut icon" href="/img/logo.png">
     <title>
         ${options.optionSiteTitle}后台
@@ -99,13 +98,9 @@
                     </a>
                 </li>
                 <li class="layui-nav-item">
-                    <a class="" href="javascript:;">
-                        用户
+                    <a href="/admin/user/edit/${user.userId}">
+                        用户信息
                     </a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/admin/user">全部用户</a></dd>
-                        <dd><a href="/admin/user/insert">添加用户</a></dd>
-                    </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">设置</a>

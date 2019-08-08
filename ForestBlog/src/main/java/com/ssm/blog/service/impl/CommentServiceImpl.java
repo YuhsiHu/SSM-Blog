@@ -15,10 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * @author 言曌
- * @date 2017/9/10
- */
 @Service
 @Slf4j
 public class CommentServiceImpl implements CommentService {

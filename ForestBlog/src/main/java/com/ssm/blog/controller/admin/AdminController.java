@@ -26,7 +26,7 @@ import java.util.Map;
 import static com.ssm.blog.util.MyUtils.getIpAddr;
 
 /**
- * @author liuyanzhao
+ *
  */
 @Controller
 public class AdminController {

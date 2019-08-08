@@ -4,6 +4,7 @@ package com.ssm.blog.controller.admin;
 import com.github.pagehelper.PageInfo;
 import com.ssm.blog.entity.Article;
 import com.ssm.blog.entity.Comment;
+import com.ssm.blog.entity.User;
 import com.ssm.blog.enums.ArticleStatus;
 import com.ssm.blog.util.MyUtils;
 import com.ssm.blog.service.ArticleService;
@@ -18,9 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 
-/**
- * @author liuyanzhao
- */
+
 @Controller
 @RequestMapping("/admin/comment")
 public class BackCommentController {
@@ -143,6 +142,8 @@ public class BackCommentController {
         //添加评论
         comment.setCommentCreateTime(new Date());
         comment.setCommentIp(MyUtils.getIpAddr(request));
+        User user = (User) request.getSession().getAttribute("user");
+        comment.setCommentAuthorAvatar(user.getUserAvatar());
         commentService.insertComment(comment);
         return "redirect:/admin/comment";
     }
