@@ -5,8 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * @author 言曌
- * @date 2018/11/25 下午3:56
+ * 文章数据传输对象
  */
 @Data
 public class ArticleParam {

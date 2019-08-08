@@ -7,7 +7,6 @@ import java.security.NoSuchAlgorithmException;
 /**
  * 常用的方法
  */
-
 public class MyUtils {
 
     /**

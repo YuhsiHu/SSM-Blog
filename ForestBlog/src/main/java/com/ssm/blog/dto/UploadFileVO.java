@@ -3,10 +3,8 @@ package com.ssm.blog.dto;
 import lombok.Data;
 
 /**
- * @author 言曌
- * @date 2017/11/30 下午7:41
+ * 文件传输对象
  */
-
 @Data
 public class UploadFileVO {
 

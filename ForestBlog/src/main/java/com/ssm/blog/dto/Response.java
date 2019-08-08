@@ -1,10 +1,8 @@
 package com.ssm.blog.dto;
 
 /**
- * @author 言曌
- * @date 2018/9/2 下午8:34
+ * response数据传输对象
  */
-
 public class Response<T> {
 
     private Boolean success;
