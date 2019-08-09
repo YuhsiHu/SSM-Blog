@@ -27,7 +27,7 @@
             <h3 class="widget-title">
                 <i class="fa fa-bars"></i>热评文章
             </h3>
-            <div id="hot_comment_widget">
+            <div id="hot_comment_widget" style="color:#F00">
                 <ul>
                     <c:forEach items="${mostCommentArticleList}" var="m">
                         <li>
