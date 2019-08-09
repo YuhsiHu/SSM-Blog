@@ -18,7 +18,7 @@
         .layui-input-block {
             margin: 0px 10px;
         }
-        
+
     </style>
 </rapid:override>
 
