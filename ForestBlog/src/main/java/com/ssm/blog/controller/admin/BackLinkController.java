@@ -73,7 +73,7 @@ public class BackLinkController {
     }
 
     /**
-     * 删除链接
+     * 后台删除链接
      *
      * @param id 链接ID
      * @return 响应
@@ -86,7 +86,7 @@ public class BackLinkController {
     }
 
     /**
-     * 编辑链接页面显示
+     * 后台编辑链接页面显示
      *
      * @param id
      * @return modelAndVIew
@@ -107,7 +107,7 @@ public class BackLinkController {
 
 
     /**
-     * 编辑链接提交
+     * 后台编辑链接提交
      *
      * @param link 链接
      * @return 响应

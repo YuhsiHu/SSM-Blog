@@ -39,7 +39,7 @@ public class BackNoticeController {
     }
 
     /**
-     * 添加公告显示
+     * 后台添加公告显示
      *
      * @return
      */
@@ -49,7 +49,7 @@ public class BackNoticeController {
     }
 
     /**
-     * 添加公告提交
+     * 后台添加公告提交
      *
      * @param notice
      * @return
@@ -65,7 +65,7 @@ public class BackNoticeController {
     }
 
     /**
-     * 删除公告
+     * 后台删除公告
      *
      * @param id
      * @return
@@ -78,7 +78,7 @@ public class BackNoticeController {
     }
 
     /**
-     * 编辑公告页面显示
+     * 后台编辑公告页面显示
      *
      * @param id
      * @return
@@ -92,7 +92,7 @@ public class BackNoticeController {
 
 
     /**
-     * 编辑公告页面显示
+     * 后台编辑公告页面显示
      *
      * @param notice
      * @return

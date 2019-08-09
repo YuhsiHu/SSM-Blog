@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="/img/logo.png">
     <title>
         ${options.optionSiteTitle}后台
-            <rapid:block name="title"></rapid:block>
+        <rapid:block name="title"></rapid:block>
     </title>
     <link rel="stylesheet" href="/plugin/layui/css/layui.css">
     <link rel="stylesheet" href="/css/back.css">
@@ -23,7 +23,7 @@
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo"><a href="/admin" style="color:#009688;">
-        ${options.optionSiteTitle}后台
+            ${options.optionSiteTitle}后台
         </a>
         </div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
@@ -60,8 +60,8 @@
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree layui-bg-black"  lay-filter="test">
-                <li class="layui-nav-item layui-nav-itemed">
+            <ul class="layui-nav layui-nav-tree layui-bg-black" lay-filter="test">
+                <li class="layui-nav-item">
                     <a class="" href="javascript:;">文章</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/article">全部文章</a></dd>

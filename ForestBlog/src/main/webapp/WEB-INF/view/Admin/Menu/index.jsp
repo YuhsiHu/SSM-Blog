@@ -55,7 +55,7 @@
                     <div class="layui-input-block">
                         URL
                         <span style="color: #FF5722; ">*</span>
-                        <input type="text" name="menuUrl" placeholder="如：http://liuyanzhao.com/message.html" autocomplete="off" class="layui-input" >
+                        <input type="text" name="menuUrl" placeholder="如：https://www.baidu.com" autocomplete="off" class="layui-input" >
                     </div>
                     <br>
                     <div class="layui-input-block">

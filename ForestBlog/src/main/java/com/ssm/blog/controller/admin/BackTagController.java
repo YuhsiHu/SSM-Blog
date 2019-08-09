@@ -56,7 +56,7 @@ public class BackTagController {
     }
 
     /**
-     * 删除标签
+     * 后台删除标签
      *
      * @param id 标签ID
      * @return
@@ -71,7 +71,7 @@ public class BackTagController {
     }
 
     /**
-     * 编辑标签页面显示
+     * 后台编辑标签页面显示
      *
      * @param id
      * @return
@@ -92,7 +92,7 @@ public class BackTagController {
 
 
     /**
-     * 编辑标签提交
+     * 后台编辑标签提交
      *
      * @param tag
      * @return

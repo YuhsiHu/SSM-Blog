@@ -73,7 +73,7 @@ public class BackPageController {
     }
 
     /**
-     * 删除页面
+     * 后台删除页面
      *
      * @param id
      * @return
@@ -87,7 +87,7 @@ public class BackPageController {
 
 
     /**
-     * 编辑页面页面显示
+     * 后台编辑页面页面显示
      *
      * @param id
      * @return
@@ -105,7 +105,7 @@ public class BackPageController {
 
 
     /**
-     * 编辑页面提交
+     * 后台编辑页面提交
      *
      * @param page
      * @return
@@ -120,7 +120,6 @@ public class BackPageController {
         }
         return "redirect:/admin/page";
     }
-
 
 }
 
