@@ -220,15 +220,28 @@ public interface ArticleService {
     void insertDraft(Article draft);
 
     /**
-     * 后台搜索文章
+     * 后台通过内容模糊查询文章
      *
      * @param way  筛选方式
      * @param cons 筛选条件
      * @return 文章列表
      */
-    PageInfo<Article> searchArticle(Integer pageIndex,
+    PageInfo<Article> searchArticleByContent(Integer pageIndex,
                                     Integer pageSize,
                                     HashMap<String, Object> criteria,
                                     String way,
                                     String cons);
+
+    /**
+     * 后台通过标题模糊查询文章
+     *
+     * @param way  筛选方式
+     * @param cons 筛选条件
+     * @return 文章列表
+     */
+    PageInfo<Article> searchArticleByTitle(Integer pageIndex,
+                                             Integer pageSize,
+                                             HashMap<String, Object> criteria,
+                                             String way,
+                                             String cons);
 }

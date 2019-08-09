@@ -211,12 +211,24 @@ public interface ArticleMapper {
     Integer insertDraft(Article draft);
 
     /**
-     * 查找文章
+     * 后台通过内容模糊查找文章
      *
      * @param criteria
      * @param way 方法
      * @param cons 约束
      * @return 文章列表
      */
-    List<Article> searchArticle(@Param("criteria") HashMap<String, Object> criteria,@Param("way") String way,@Param("cons") String cons);
+    List<Article> searchArticleByContent(@Param("criteria") HashMap<String, Object> criteria,@Param("way") String way,@Param("cons") String cons);
+
+    /**
+     * 后台通过标题模糊查找文章
+     *
+     * @param criteria
+     * @param way 方法
+     * @param cons 约束
+     * @return 文章列表
+     */
+    List<Article> searchArticleByTitle(@Param("criteria") HashMap<String, Object> criteria,@Param("way") String way,@Param("cons") String cons);
+
+
 }

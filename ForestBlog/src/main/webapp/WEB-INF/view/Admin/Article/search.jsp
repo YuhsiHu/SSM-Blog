@@ -18,8 +18,7 @@
         .layui-input-block {
             margin: 0px 10px;
         }
-
-
+        
     </style>
 </rapid:override>
 
@@ -32,9 +31,11 @@
         </span>
     </blockquote>
 
+
     <form class="layui-form" action="/admin/article/searchArticle">
+
         <div class="layui-form-item">
-            <label class="layui-form-label">查找方式</label>
+            <label class="layui-form-label" >查找方式</label>
             <div class="layui-input-block">
                 <select name="way" lay-verify="required">
                     <option value=""></option>
@@ -59,7 +60,6 @@
             </div>
         </div>
     </form>
-
 
     <div class="layui-tab layui-tab-card">
         <form id="articleForm" method="post">

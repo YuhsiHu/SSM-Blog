@@ -161,6 +161,7 @@ public class ArticleServiceImpl implements ArticleService {
 //            List<Tag> tagList = articleTagRefMapper.listTagByArticleId(articleList.get(i).getArticleId());
 //            articleList.get(i).setTagList(tagList);
         }
+        System.out.println(articleList.toString());
         return new PageInfo<>(articleList);
     }
 
@@ -277,11 +278,11 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public PageInfo<Article> searchArticle(Integer pageIndex,
-                                           Integer pageSize,
-                                           HashMap<String, Object> criteria, String way, String cons) {
+    public PageInfo<Article> searchArticleByContent(Integer pageIndex,
+                                                    Integer pageSize,
+                                                    HashMap<String, Object> criteria, String way, String cons) {
         PageHelper.startPage(pageIndex, pageSize);
-        List<Article> articleList = articleMapper.searchArticle(criteria, way, cons);
+        List<Article> articleList = articleMapper.searchArticleByContent(criteria, way, cons);
 
         for (int i = 0; i < articleList.size(); i++) {
             //封装CategoryList
@@ -292,6 +293,27 @@ public class ArticleServiceImpl implements ArticleService {
             }
             articleList.get(i).setCategoryList(categoryList);
         }
+        System.out.println(articleList.toString());
+        return new PageInfo<>(articleList);
+    }
+
+    @Override
+    public PageInfo<Article> searchArticleByTitle(Integer pageIndex,
+                                                  Integer pageSize,
+                                                  HashMap<String, Object> criteria, String way, String cons) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<Article> articleList = articleMapper.searchArticleByTitle(criteria, way, cons);
+
+        for (int i = 0; i < articleList.size(); i++) {
+            //封装CategoryList
+            List<Category> categoryList = articleCategoryRefMapper.listCategoryByArticleId(articleList.get(i).getArticleId());
+            if (categoryList == null || categoryList.size() == 0) {
+                categoryList = new ArrayList<>();
+                categoryList.add(Category.Default());
+            }
+            articleList.get(i).setCategoryList(categoryList);
+        }
+        System.out.println(articleList.toString());
         return new PageInfo<>(articleList);
     }
 

@@ -251,8 +251,16 @@ public class BackArticleController {
             model.addAttribute("pageUrlPrefix", "/admin/article/search?status=" + status + "&pageIndex");
         }
 
-        PageInfo<Article> articlePageInfo = articleService.searchArticle(pageIndex, pageSize, criteria, way, cons);
-        model.addAttribute("pageInfo", articlePageInfo);
+        if(way.equals("article_content")) {
+            PageInfo<Article> articlePageInfo = articleService.searchArticleByContent(pageIndex, pageSize, criteria, way, cons);
+            model.addAttribute("pageInfo", articlePageInfo);
+        }else if(way.equals("article_title")){
+            PageInfo<Article> articlePageInfo = articleService.searchArticleByTitle(pageIndex, pageSize, criteria, way, cons);
+            model.addAttribute("pageInfo", articlePageInfo);
+        }
+
+//        PageInfo<Article> articlePageInfo = articleService.searchArticleByContent(pageIndex, pageSize, criteria, way, cons);
+//        model.addAttribute("pageInfo", articlePageInfo);
         return "Admin/Article/search";
     }
 

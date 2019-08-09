@@ -343,14 +343,24 @@
         #{articleContent,jdbcType=LONGVARCHAR}, #{articleSummary,jdbcType=VARCHAR})
     </insert>
 
-    <select id="searchArticle" resultMap="BaseResultMap">
+    <select id="searchArticleByContent" resultMap="BaseResultMap">
         SELECT
         article.*
         FROM
         article
         <where>
-            #{way} LIKE concat('%',#{cons},'%') AND
-            1 = 1
+            article_content LIKE concat('%',#{cons},'%')
+        </where>
+        ORDER BY `article`.`article_order` DESC, `article`.`article_id` DESC
+    </select>
+
+    <select id="searchArticleByTitle" resultMap="BaseResultMap">
+        SELECT
+        article.*
+        FROM
+        article
+        <where>
+            article_title LIKE concat('%',#{cons},'%')
         </where>
         ORDER BY `article`.`article_order` DESC, `article`.`article_id` DESC
     </select>
