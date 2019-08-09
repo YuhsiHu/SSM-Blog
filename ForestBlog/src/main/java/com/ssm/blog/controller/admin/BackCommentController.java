@@ -18,7 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
-
+/*
+*评论管理
+ */
 
 @Controller
 @RequestMapping("/admin/comment")

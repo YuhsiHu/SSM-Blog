@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+/*
+评论
+ */
 @Service
 public interface CommentService {
 

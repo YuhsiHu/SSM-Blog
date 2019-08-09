@@ -27,7 +27,6 @@
     <blockquote class="layui-elem-quote">
          <span class="layui-breadcrumb" lay-separator="/">
               <a href="/admin">首页</a>
-              <a href="/admin/user">用户列表</a>
               <a><cite>编辑用户</cite></a>
         </span>
     </blockquote>
