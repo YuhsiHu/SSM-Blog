@@ -129,7 +129,7 @@
                     <c:forEach items="${article.tagList}" var="t">
                         <li>
                             <a href="/tag/${t.tagId}" rel="tag"
-                               style="background:#666666">
+                               style="background:#ebebeb; color: black;">
                                     ${t.tagName}
                             </a>
                         </li>
@@ -296,11 +296,7 @@
                                     <input type="email" name="commentAuthorEmail" id="author_email" class="" value=""
                                            tabindex="3" required>
                                 </p>
-                                <p class="comment-form-url">
-                                    <label for="author_url">网址</label>
-                                    <input type="url" name="commentAuthorUrl" id="author_url" class="" value=""
-                                           tabindex="4">
-                                </p>
+
                             </c:if>
                         </div>
                         <div class="clear"></div>

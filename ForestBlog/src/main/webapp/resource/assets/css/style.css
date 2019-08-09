@@ -214,7 +214,6 @@ a, button, input {
 /** 头部 **/
 #masthead {
     height: 120px;
-    background-color: #393D49;
 }
 
 .logo-site, .logo-sites {
@@ -366,6 +365,7 @@ a, button, input {
 /** 顶部导航 **/
 #top-header {
     border-bottom: 1px solid #dedede;
+    background-color: blanchedalmond;
 }
 
 .top-nav {
@@ -495,11 +495,11 @@ a, button, input {
 
 /** 主导航 **/
 #menu-box {
-    background: #fff;
+    background: blanchedalmond;
     width: 100%;
     z-index: 999;
     right: 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e8ffe8;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 }
 
@@ -629,8 +629,8 @@ a, button, input {
 
 #site-nav .down-menu > li > a:hover,
 #site-nav .down-menu > li.sfHover > a {
-    color: #fff !important;
-    background: #666;
+    color: black !important;
+    background: #ddd;
 }
 
 #site-nav .down-menu > .current-menu-item > a,
@@ -677,6 +677,7 @@ a, button, input {
     border: 0px;
     text-transform: none;
     font-size: 0.9em;
+    background-color: #ffebcd;
 }
 
 #site-nav .down-menu ul li > a:hover {
@@ -1049,7 +1050,7 @@ a, button, input {
     position: fixed;
     left: 0;
     right: 0;
-    background: #fff;
+    background: #ffebcd;
     width: 1080px;
     text-align: center;
     margin: 5px auto;
@@ -1072,7 +1073,7 @@ a, button, input {
     line-height: 37px;
     font: 14px "Microsoft YaHei", Helvetica;
     padding: 2px 10px;
-    background: #ebebeb;
+    background: #f5f5f5;
     border: 1px solid #ebebeb;
     border-radius: 2px 0 0 2px;
     -webkit-appearance: none;
@@ -1357,6 +1358,7 @@ a, button, input {
 
 #page {
     flex:1;
+    background-color: #f1f7d6;
 }
 
 #primary {
@@ -2538,8 +2540,8 @@ img.alignleft {
 }
 
 .meta-nav:hover {
-    color: #fff;
-    background: #009688;
+    color: black;
+    background: #f5f5f5;
     border: 1px solid #009688;
 }
 
@@ -2608,7 +2610,7 @@ img.alignleft {
 }
 
 #sidebar h3 {
-    background: #f8f8f8;
+    background: #ffe7c3;
     height: 40px;
     line-height: 40px;
     border-bottom: 1px solid #ddd;
@@ -2629,7 +2631,7 @@ img.alignleft {
 }
 
 .widget {
-    background: #fff;
+    background: #ffeecb;
     margin: 0 0 10px 0;
     border: 1px solid #ddd;
     border-radius: 2px;
@@ -2651,6 +2653,7 @@ img.alignleft {
 #calendar_wrap,
 .tagcloud {
     padding: 15px;
+    background-color: #ffeecb;
 }
 
 .widget ul li ul {
@@ -2671,6 +2674,7 @@ img.alignleft {
 
 #advert_widget, .php_text .widget-text {
     padding: 3px;
+    background-color: #ffeecb;
 }
 
 .widget .textwidget img,
@@ -2708,7 +2712,7 @@ img.alignleft {
 .widget_links a:hover,
 .tagcloud a:hover,
 #sidebar .widget_nav_menu a:hover {
-    background: #009688;
+    background: yellowgreen;
     color: #fff !important;
     border: 1px solid #009688;
     transition: all 0.1s ease-in 0s;
@@ -2727,6 +2731,7 @@ img.alignleft {
     border: 1px solid #ddd;
     border-radius: 2px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    background-color: #f5f5f5;
 }
 
 .widget_archive select,
@@ -3052,6 +3057,7 @@ img.alignleft {
     position: relative;
     font-size: 18px;
     display: block;
+    background-color: #ffeecb;
 }
 
 #feed_widget ul {
@@ -3139,7 +3145,7 @@ img.alignleft {
 
 .about-inf {
     text-align: center;
-    background: #f8f8f8;
+    background: #ffe7c3;
     float: left;
     font-size: 14px;
     width: 100%;
@@ -4114,7 +4120,7 @@ li.comments-anchor {
 }
 /** 页脚 **/
 #colophon {
-    background: #fff;
+    background: blanchedalmond;
     position: relative;
     width: auto;
     border-top: 1px solid #ddd;
@@ -5868,6 +5874,7 @@ li.search-inf {
     #site-nav .down-menu a {
         padding: 0 13px;
     }
+
 
     #colophon {
         width: auto;
