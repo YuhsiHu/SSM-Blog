@@ -50,13 +50,16 @@ public class BackArticleController {
     public String index(@RequestParam(required = false, defaultValue = "1") Integer pageIndex,
                         @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                         @RequestParam(required = false) String status, Model model) {
+
         HashMap<String, Object> criteria = new HashMap<>(1);
+
         if (status == null) {
             model.addAttribute("pageUrlPrefix", "/admin/article?pageIndex");
         } else {
             criteria.put("status", status);
             model.addAttribute("pageUrlPrefix", "/admin/article?status=" + status + "&pageIndex");
         }
+
         PageInfo<Article> articlePageInfo = articleService.pageArticle(pageIndex, pageSize, criteria);
         model.addAttribute("pageInfo", articlePageInfo);
         return "Admin/Article/index";
@@ -228,6 +231,51 @@ public class BackArticleController {
         return "redirect:/admin/article";
     }
 
+    /**
+     * 后台文章列表搜索
+     *
+     * @return modelAndView
+     */
+    @RequestMapping(value = "/searchArticle")
+    public String searchArticle(@RequestParam(required = false, defaultValue = "1") Integer pageIndex,
+                                @RequestParam(required = false, defaultValue = "10") Integer pageSize,
+                                @RequestParam(required = false) String status,
+                                @RequestParam("way") String way,
+                                @RequestParam("cons") String cons,
+                                Model model) {
+        HashMap<String, Object> criteria = new HashMap<>(1);
+        if (status == null) {
+            model.addAttribute("pageUrlPrefix", "/admin/article/search?pageIndex");
+        } else {
+            criteria.put("status", status);
+            model.addAttribute("pageUrlPrefix", "/admin/article/search?status=" + status + "&pageIndex");
+        }
+
+        PageInfo<Article> articlePageInfo = articleService.searchArticle(pageIndex, pageSize, criteria, way, cons);
+        model.addAttribute("pageInfo", articlePageInfo);
+        return "Admin/Article/search";
+    }
+
+    /**
+     * 后台搜索文章页面首次文章列表显示
+     *
+     * @return modelAndView
+     */
+    @RequestMapping(value = "/search")
+    public String search(@RequestParam(required = false, defaultValue = "1") Integer pageIndex,
+                         @RequestParam(required = false, defaultValue = "10") Integer pageSize,
+                         @RequestParam(required = false) String status, Model model) {
+        HashMap<String, Object> criteria = new HashMap<>(1);
+        if (status == null) {
+            model.addAttribute("pageUrlPrefix", "/admin/article?pageIndex");
+        } else {
+            criteria.put("status", status);
+            model.addAttribute("pageUrlPrefix", "/admin/article?status=" + status + "&pageIndex");
+        }
+        PageInfo<Article> articlePageInfo = articleService.pageArticle(pageIndex, pageSize, criteria);
+        model.addAttribute("pageInfo", articlePageInfo);
+        return "Admin/Article/search";
+    }
 }
 
 

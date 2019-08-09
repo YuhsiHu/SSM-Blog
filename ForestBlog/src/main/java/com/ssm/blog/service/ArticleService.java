@@ -8,8 +8,6 @@ import java.util.List;
 
 /**
  * 文章Service
- *
- *
  */
 public interface ArticleService {
 
@@ -215,9 +213,22 @@ public interface ArticleService {
     List<Article> listAllNotWithContent();
 
     /**
-     *添加文章草稿
+     * 添加文章草稿
      *
      * @param draft 文章草稿
      */
     void insertDraft(Article draft);
+
+    /**
+     * 后台搜索文章
+     *
+     * @param way  筛选方式
+     * @param cons 筛选条件
+     * @return 文章列表
+     */
+    PageInfo<Article> searchArticle(Integer pageIndex,
+                                    Integer pageSize,
+                                    HashMap<String, Object> criteria,
+                                    String way,
+                                    String cons);
 }

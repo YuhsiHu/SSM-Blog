@@ -21,7 +21,6 @@ import java.util.List;
 
 /**
  * 文章Servie实现
- *
  */
 @Service
 @Slf4j
@@ -277,5 +276,23 @@ public class ArticleServiceImpl implements ArticleService {
 
     }
 
+    @Override
+    public PageInfo<Article> searchArticle(Integer pageIndex,
+                                           Integer pageSize,
+                                           HashMap<String, Object> criteria, String way, String cons) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<Article> articleList = articleMapper.searchArticle(criteria, way, cons);
+
+        for (int i = 0; i < articleList.size(); i++) {
+            //封装CategoryList
+            List<Category> categoryList = articleCategoryRefMapper.listCategoryByArticleId(articleList.get(i).getArticleId());
+            if (categoryList == null || categoryList.size() == 0) {
+                categoryList = new ArrayList<>();
+                categoryList.add(Category.Default());
+            }
+            articleList.get(i).setCategoryList(categoryList);
+        }
+        return new PageInfo<>(articleList);
+    }
 
 }

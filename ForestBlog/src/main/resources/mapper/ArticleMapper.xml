@@ -342,4 +342,16 @@
         #{articleIsComment,jdbcType=INTEGER}, #{articleStatus,jdbcType=INTEGER}, #{articleOrder,jdbcType=INTEGER},
         #{articleContent,jdbcType=LONGVARCHAR}, #{articleSummary,jdbcType=VARCHAR})
     </insert>
+
+    <select id="searchArticle" resultMap="BaseResultMap">
+        SELECT
+        article.*
+        FROM
+        article
+        <where>
+            #{way} LIKE concat('%',#{cons},'%') AND
+            1 = 1
+        </where>
+        ORDER BY `article`.`article_order` DESC, `article`.`article_id` DESC
+    </select>
 </mapper>

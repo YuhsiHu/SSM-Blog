@@ -54,7 +54,7 @@ public class BackUserController {
     @RequestMapping(value = "/editSubmit",method = RequestMethod.POST)
     public String editUserSubmit(User user)  {
         userService.updateUser(user);
-        return "redirect:/admin/user";
+        return "redirect:/admin";
     }
 
     /**
