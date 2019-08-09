@@ -293,7 +293,6 @@ public class ArticleServiceImpl implements ArticleService {
             }
             articleList.get(i).setCategoryList(categoryList);
         }
-        System.out.println(articleList.toString());
         return new PageInfo<>(articleList);
     }
 
@@ -313,7 +312,6 @@ public class ArticleServiceImpl implements ArticleService {
             }
             articleList.get(i).setCategoryList(categoryList);
         }
-        System.out.println(articleList.toString());
         return new PageInfo<>(articleList);
     }
 

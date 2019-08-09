@@ -42,7 +42,7 @@ public class BackArticleController {
     private CategoryService categoryService;//分类服务
 
     /**
-     * 后台文章列表显示
+     * 后台index文章列表显示
      *
      * @return modelAndView
      */
@@ -131,7 +131,7 @@ public class BackArticleController {
 
 
     /**
-     * 删除文章
+     * 后台删除文章
      *
      * @param id 文章ID
      */
@@ -142,7 +142,7 @@ public class BackArticleController {
 
 
     /**
-     * 编辑文章页面显示
+     * 后台编辑文章页面显示
      *
      * @param id
      * @return
@@ -154,21 +154,18 @@ public class BackArticleController {
         Article article = articleService.getArticleByStatusAndId(null, id);
         modelAndView.addObject("article", article);
 
-
         List<Category> categoryList = categoryService.listCategory();
         modelAndView.addObject("categoryList", categoryList);
 
         List<Tag> tagList = tagService.listTag();
         modelAndView.addObject("tagList", tagList);
-
-
         modelAndView.setViewName("Admin/Article/edit");
         return modelAndView;
     }
 
 
     /**
-     * 编辑文章提交
+     * 后台编辑文章提交
      *
      * @param articleParam
      * @return
@@ -251,16 +248,15 @@ public class BackArticleController {
             model.addAttribute("pageUrlPrefix", "/admin/article/search?status=" + status + "&pageIndex");
         }
 
-        if(way.equals("article_content")) {
+        //判断根据content还是title查
+        if (way.equals("article_content")) {
             PageInfo<Article> articlePageInfo = articleService.searchArticleByContent(pageIndex, pageSize, criteria, way, cons);
             model.addAttribute("pageInfo", articlePageInfo);
-        }else if(way.equals("article_title")){
+        } else if (way.equals("article_title")) {
             PageInfo<Article> articlePageInfo = articleService.searchArticleByTitle(pageIndex, pageSize, criteria, way, cons);
             model.addAttribute("pageInfo", articlePageInfo);
         }
 
-//        PageInfo<Article> articlePageInfo = articleService.searchArticleByContent(pageIndex, pageSize, criteria, way, cons);
-//        model.addAttribute("pageInfo", articlePageInfo);
         return "Admin/Article/search";
     }
 
@@ -273,6 +269,7 @@ public class BackArticleController {
     public String search(@RequestParam(required = false, defaultValue = "1") Integer pageIndex,
                          @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                          @RequestParam(required = false) String status, Model model) {
+
         HashMap<String, Object> criteria = new HashMap<>(1);
         if (status == null) {
             model.addAttribute("pageUrlPrefix", "/admin/article?pageIndex");
@@ -280,6 +277,7 @@ public class BackArticleController {
             criteria.put("status", status);
             model.addAttribute("pageUrlPrefix", "/admin/article?status=" + status + "&pageIndex");
         }
+
         PageInfo<Article> articlePageInfo = articleService.pageArticle(pageIndex, pageSize, criteria);
         model.addAttribute("pageInfo", articlePageInfo);
         return "Admin/Article/search";

@@ -81,7 +81,7 @@
             <blockquote class="layui-elem-quote layui-quote-nm">
                 温馨提示：
                 <ul>
-                    <li>URL：如 http://liuyanzhao.com</li>
+                    <li>URL：如 https://www.baidu.com</li>
                     <li>Order：默认是0，Order越大排名越靠前</li>
                 </ul>
             </blockquote>

@@ -59,7 +59,7 @@ public class BackCategoryController {
     }
 
     /**
-     * 删除分类
+     * 后台删除分类
      *
      * @param id
      * @return
@@ -76,7 +76,7 @@ public class BackCategoryController {
     }
 
     /**
-     * 编辑分类页面显示
+     * 后台编辑分类页面显示
      *
      * @param id
      * @return
@@ -96,7 +96,7 @@ public class BackCategoryController {
     }
 
     /**
-     * 编辑分类提交
+     * 后台编辑分类提交
      *
      * @param category 分类
      * @return 重定向
