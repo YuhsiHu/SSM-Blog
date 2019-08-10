@@ -6,6 +6,7 @@ import com.ssm.blog.entity.User;
 import com.ssm.blog.service.ArticleService;
 import com.ssm.blog.service.CommentService;
 import com.ssm.blog.service.UserService;
+import com.ssm.blog.util.MyUtils;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -84,7 +85,7 @@ public class AdminController {
         if(user==null) {
             map.put("code",0);
             map.put("msg","用户名无效！");
-        } else if(!user.getUserPass().equals(password)) {
+        } else if(!user.getUserPass().equals(MyUtils.strToMd5(password))) {
             map.put("code",0);
             map.put("msg","密码错误！");
         } else {
