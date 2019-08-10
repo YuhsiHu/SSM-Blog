@@ -33,7 +33,9 @@ public class BackPageController {
     @RequestMapping(value = "")
     public ModelAndView index() {
         ModelAndView modelAndView = new ModelAndView();
+        //获得页面列表
         List<Page> pageList = pageService.listPage(null);
+
         modelAndView.addObject("pageList", pageList);
         modelAndView.setViewName("Admin/Page/index");
         return modelAndView;
@@ -60,7 +62,6 @@ public class BackPageController {
      */
     @RequestMapping(value = "/insertSubmit", method = RequestMethod.POST)
     public String insertPageSubmit(Page page) {
-
         //判断别名是否存在
         Page checkPage = pageService.getPageByKey(null, page.getPageKey());
         if (checkPage == null) {
@@ -95,7 +96,7 @@ public class BackPageController {
     @RequestMapping(value = "/edit/{id}")
     public ModelAndView editPageView(@PathVariable("id") Integer id) {
         ModelAndView modelAndView = new ModelAndView();
-
+        //获得编辑的页面
         Page page = pageService.getPageById(id);
         modelAndView.addObject("page", page);
 

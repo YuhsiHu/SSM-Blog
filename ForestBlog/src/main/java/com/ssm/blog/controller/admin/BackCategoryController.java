@@ -38,7 +38,9 @@ public class BackCategoryController {
     @RequestMapping(value = "")
     public ModelAndView categoryList()  {
         ModelAndView modelandview = new ModelAndView();
+        //获得带有文章数量的分类列表
         List<Category> categoryList = categoryService.listCategoryWithCount();
+
         modelandview.addObject("categoryList",categoryList);
         modelandview.setViewName("Admin/Category/index");
         return modelandview;
@@ -84,10 +86,10 @@ public class BackCategoryController {
     @RequestMapping(value = "/edit/{id}")
     public ModelAndView editCategoryView(@PathVariable("id") Integer id)  {
         ModelAndView modelAndView = new ModelAndView();
-
+        //获得需编辑的分类
         Category category =  categoryService.getCategoryById(id);
         modelAndView.addObject("category",category);
-
+        //获得带有文章数量的分类列表
         List<Category> categoryList = categoryService.listCategoryWithCount();
         modelAndView.addObject("categoryList",categoryList);
 

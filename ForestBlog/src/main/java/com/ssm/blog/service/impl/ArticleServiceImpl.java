@@ -37,6 +37,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public Integer countArticle(Integer status) {
+        //获取文章总数
         Integer count = 0;
         try {
             count = articleMapper.countArticle(status);
@@ -49,6 +50,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public Integer countArticleComment() {
+        //获取评论总数
         Integer count = 0;
         try {
             count = articleMapper.countArticleComment();
@@ -62,6 +64,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public Integer countArticleView() {
+        //获取浏览总数
         Integer count = 0;
         try {
             count = articleMapper.countArticleView();
@@ -74,6 +77,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public Integer countArticleByCategoryId(Integer categoryId) {
+        //统计这个分类下文章数
         Integer count = 0;
         try {
             count = articleCategoryRefMapper.countArticleByCategoryId(categoryId);
@@ -86,23 +90,34 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public Integer countArticleByTagId(Integer tagId) {
-        return articleTagRefMapper.countArticleByTagId(tagId);
+        //统计这个标签下文章数
+        Integer count=0;
+        try{
+            count=articleTagRefMapper.countArticleByTagId(tagId);
+        }catch (Exception e) {
+            e.printStackTrace();
+            log.error("根据标签统计文章数量失败, categoryId:{}, cause:{}", tagId, e);
+        }
+        return count;
 
     }
 
     @Override
     public List<Article> listArticle(HashMap<String, Object> criteria) {
+        //获取所有文章不分页
         return articleMapper.findAll(criteria);
     }
 
     @Override
     public List<Article> listRecentArticle(Integer limit) {
+        //获取近期文章
         return articleMapper.listArticleByLimit(limit);
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void updateArticleDetail(Article article) {
+        //修改文章详细信息
         article.setArticleUpdateTime(new Date());
         articleMapper.update(article);
 
@@ -129,16 +144,19 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public void updateArticle(Article article) {
+        //修改文章简单信息
         articleMapper.update(article);
     }
 
     @Override
     public void deleteArticleBatch(List<Integer> ids) {
+        //批量删除文章
         articleMapper.deleteBatch(ids);
     }
 
     @Override
     public void deleteArticle(Integer id) {
+        //删除文章
         articleMapper.deleteById(id);
     }
 
@@ -147,6 +165,7 @@ public class ArticleServiceImpl implements ArticleService {
     public PageInfo<Article> pageArticle(Integer pageIndex,
                                          Integer pageSize,
                                          HashMap<String, Object> criteria) {
+        //分页显示
         PageHelper.startPage(pageIndex, pageSize);
         List<Article> articleList = articleMapper.findAll(criteria);
         for (int i = 0; i < articleList.size(); i++) {
@@ -167,6 +186,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public Article getArticleByStatusAndId(Integer status, Integer id) {
+        //文章详情页面显示
         Article article = articleMapper.getArticleByStatusAndId(status, id);
         if (article != null) {
             List<Category> categoryList = articleCategoryRefMapper.listCategoryByArticleId(article.getArticleId());
@@ -180,21 +200,25 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public List<Article> listArticleByViewCount(Integer limit) {
+        //获取访问量较多的文章
         return articleMapper.listArticleByViewCount(limit);
     }
 
     @Override
     public Article getAfterArticle(Integer id) {
+        //获取上一篇文章
         return articleMapper.getAfterArticle(id);
     }
 
     @Override
     public Article getPreArticle(Integer id) {
+        //获取下一篇文章
         return articleMapper.getPreArticle(id);
     }
 
     @Override
     public List<Article> listRandomArticle(Integer limit) {
+        //获取随机文章
         return articleMapper.listRandomArticle(limit);
     }
 
@@ -231,21 +255,25 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public void updateCommentCount(Integer articleId) {
+        //更新文章评论数
         articleMapper.updateCommentCount(articleId);
     }
 
     @Override
     public Article getLastUpdateArticle() {
+        //获得最后更新记录
         return articleMapper.getLastUpdateArticle();
     }
 
     @Override
     public List<Article> listArticleByCategoryId(Integer cateId, Integer limit) {
+        //获得相关文章
         return articleMapper.findArticleByCategoryId(cateId, limit);
     }
 
     @Override
     public List<Article> listArticleByCategoryIds(List<Integer> cateIds, Integer limit) {
+        //获得相关文章
         if (cateIds == null || cateIds.size() == 0) {
             return null;
         }
@@ -254,11 +282,13 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public List<Integer> listCategoryIdByArticleId(Integer articleId) {
+        //根据文章ID获得分类ID列表
         return articleCategoryRefMapper.selectCategoryIdByArticleId(articleId);
     }
 
     @Override
     public List<Article> listAllNotWithContent() {
+        //获得所有文章
         return articleMapper.listAllNotWithContent();
     }
 
@@ -274,13 +304,13 @@ public class ArticleServiceImpl implements ArticleService {
         draft.setArticleOrder(1);
         draft.setArticleStatus(0);
         articleMapper.insertDraft(draft);
-
     }
 
     @Override
     public PageInfo<Article> searchArticleByContent(Integer pageIndex,
                                                     Integer pageSize,
                                                     HashMap<String, Object> criteria, String way, String cons) {
+        //通过文章内容模糊查询
         PageHelper.startPage(pageIndex, pageSize);
         List<Article> articleList = articleMapper.searchArticleByContent(criteria, way, cons);
 
@@ -300,6 +330,7 @@ public class ArticleServiceImpl implements ArticleService {
     public PageInfo<Article> searchArticleByTitle(Integer pageIndex,
                                                   Integer pageSize,
                                                   HashMap<String, Object> criteria, String way, String cons) {
+        //通过文章标题模糊查询
         PageHelper.startPage(pageIndex, pageSize);
         List<Article> articleList = articleMapper.searchArticleByTitle(criteria, way, cons);
 

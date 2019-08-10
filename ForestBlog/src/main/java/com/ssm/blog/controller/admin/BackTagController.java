@@ -34,6 +34,7 @@ public class BackTagController {
     @RequestMapping(value = "")
     public ModelAndView index()  {
         ModelAndView modelandview = new ModelAndView();
+        //获得带有文章数量的标签列表
         List<Tag> tagList = tagService.listTagWithCount();
         modelandview.addObject("tagList",tagList);
 
@@ -63,7 +64,9 @@ public class BackTagController {
      */
     @RequestMapping(value = "/delete/{id}")
     public String deleteTag(@PathVariable("id") Integer id)  {
+        //获得该标签下文章数量
         Integer count = articleService.countArticleByTagId(id);
+        //标签下没有文章才可以删除
         if (count == 0) {
             tagService.deleteTag(id);
         }
@@ -79,10 +82,10 @@ public class BackTagController {
     @RequestMapping(value = "/edit/{id}")
     public ModelAndView editTagView(@PathVariable("id") Integer id)  {
         ModelAndView modelAndView = new ModelAndView();
-
+        //获得编辑的标签
         Tag tag =  tagService.getTagById(id);
         modelAndView.addObject("tag",tag);
-
+        //获得标签下的文章数量
         List<Tag> tagList = tagService.listTagWithCount();
         modelAndView.addObject("tagList",tagList);
 
