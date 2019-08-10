@@ -3,6 +3,7 @@ package com.ssm.blog.controller.admin;
 
 import com.ssm.blog.entity.User;
 import com.ssm.blog.service.UserService;
+import com.ssm.blog.util.MyUtils;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -53,6 +54,8 @@ public class BackUserController {
      */
     @RequestMapping(value = "/editSubmit",method = RequestMethod.POST)
     public String editUserSubmit(User user)  {
+        String md5Pwd= MyUtils.strToMd5(user.getUserPass());
+        user.setUserPass(md5Pwd);
         userService.updateUser(user);
         return "redirect:/admin";
     }

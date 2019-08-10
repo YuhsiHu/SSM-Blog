@@ -378,7 +378,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin','123456','YuhsiHu','374522830@qq.com','https://github.com/YuhsiHu','/uploads/2019\\8/z(1).jpg','127.0.0.1','2019-08-06 21:56:33','2019-08-10 02:46:12',1);
+INSERT INTO `user` VALUES (1,'admin','e10adc3949ba59abbe56e057f20f883e','YuhsiHu','374522830@qq.com','https://github.com/YuhsiHu','/uploads/2019\\8/z(1).jpg','127.0.0.1','2019-08-06 21:56:33','2019-08-10 04:15:30',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -391,4 +391,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-10 10:58:19
+-- Dump completed on 2019-08-10 12:17:15
