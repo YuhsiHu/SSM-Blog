@@ -18,6 +18,10 @@ import java.util.Date;
 import java.util.List;
 
 
+/*
+*评论管理
+ */
+
 @Controller
 @RequestMapping("/admin/comment")
 public class BackCommentController {
@@ -65,7 +69,7 @@ public class BackCommentController {
     }
 
     /**
-     * 删除评论
+     * 删除评论及其子评论S
      *
      * @param id 批量ID
      */

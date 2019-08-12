@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author liuyanzhao
+ * 菜单实体类
  */
 @Data
 public class Menu implements Serializable {

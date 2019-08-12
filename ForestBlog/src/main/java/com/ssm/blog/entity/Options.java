@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author liuyanzhao
+ *
  */
 @Data
 public class Options implements Serializable{

@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Calendar;
 
 /**
+ *
  * 后台上传文件controller
  */
 @Slf4j
@@ -22,7 +23,7 @@ public class UploadFileController {
     /**
      * 文件保存目录，物理路径
      */
-    public final String rootPath = "D:/工作/华迪实习/ForestBlog-master/uploads";
+    public final String rootPath = "D:/Git/blog/blog/uploads";
 
     public final String allowSuffix = ".bmp.jpg.jpeg.png.gif.pdf.doc.zip.rar.gz";
 

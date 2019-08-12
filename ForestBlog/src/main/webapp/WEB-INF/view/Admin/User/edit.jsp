@@ -27,7 +27,6 @@
     <blockquote class="layui-elem-quote">
          <span class="layui-breadcrumb" lay-separator="/">
               <a href="/admin">首页</a>
-              <a href="/admin/user">用户列表</a>
               <a><cite>编辑用户</cite></a>
         </span>
     </blockquote>
@@ -100,7 +99,7 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit lay-filter="demo1" id="submit-btn" onclick="javascript:alert('保存成功')">保存</button>
+                <button class="layui-btn" lay-submit lay-filter="demo1" id="submit-btn" >保存</button>
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
         </div>

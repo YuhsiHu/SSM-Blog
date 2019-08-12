@@ -18,8 +18,8 @@ import java.util.List;
 import java.util.Map;
 
 
-/**
- * @author liuyanzhao
+/*
+ *用户管理
  */
 @Controller
 @RequestMapping("/admin/user")

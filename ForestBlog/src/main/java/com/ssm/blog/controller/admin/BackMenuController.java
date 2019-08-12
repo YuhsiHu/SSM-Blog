@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 /**
- * @author liuyanzhao
+ * 设置菜单界面
  */
 @Controller
 @RequestMapping("/admin/menu")

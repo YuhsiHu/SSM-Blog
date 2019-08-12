@@ -34,7 +34,6 @@
                     <input type="hidden" name="optionId" value="${option.optionId}">
                 </c:when>
                 <c:otherwise>
-                    <%--给一个默认值，这个地方很奇怪，本来不需要加的--%>
                     <input type="hidden" name="optionId" value="1">
                 </c:otherwise>
             </c:choose>
