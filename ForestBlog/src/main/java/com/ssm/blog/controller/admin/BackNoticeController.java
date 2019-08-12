@@ -31,7 +31,7 @@ public class BackNoticeController {
      */
     @RequestMapping(value = "")
     public String index(Model model) {
-
+        //获得公告列表
         List<Notice> noticeList = noticeService.listNotice(null);
         model.addAttribute("noticeList", noticeList);
         return "Admin/Notice/index";

@@ -32,7 +32,7 @@ public class BackLinkController {
     @RequestMapping(value = "")
     public ModelAndView linkList()  {
         ModelAndView modelandview = new ModelAndView();
-
+        //获得链接列表
         List<Link> linkList = linkService.listLink(null);
         modelandview.addObject("linkList",linkList);
 
@@ -49,7 +49,7 @@ public class BackLinkController {
     @RequestMapping(value = "/insert")
     public ModelAndView insertLinkView()  {
         ModelAndView modelAndView = new ModelAndView();
-
+        //获得链接列表
         List<Link> linkList = linkService.listLink(null);
         modelAndView.addObject("linkList",linkList);
 
@@ -94,10 +94,10 @@ public class BackLinkController {
     @RequestMapping(value = "/edit/{id}")
     public ModelAndView editLinkView(@PathVariable("id") Integer id)  {
         ModelAndView modelAndView = new ModelAndView();
-
+        //获得编辑的链接
         Link linkCustom =  linkService.getLinkById(id);
         modelAndView.addObject("linkCustom",linkCustom);
-
+        //获得链接列表
         List<Link> linkList = linkService.listLink(null);
         modelAndView.addObject("linkList",linkList);
 

@@ -17,7 +17,7 @@ public interface ArticleMapper {
      * 根据ID删除
      *
      * @param articleId 文章ID
-     * @return 影响函数
+     * @return 影响行数
      */
     Integer deleteById(Integer articleId);
 
@@ -214,21 +214,21 @@ public interface ArticleMapper {
      * 后台通过内容模糊查找文章
      *
      * @param criteria
-     * @param way 方法
-     * @param cons 约束
+     * @param way      方法
+     * @param cons     约束
      * @return 文章列表
      */
-    List<Article> searchArticleByContent(@Param("criteria") HashMap<String, Object> criteria,@Param("way") String way,@Param("cons") String cons);
+    List<Article> searchArticleByContent(@Param("criteria") HashMap<String, Object> criteria, @Param("way") String way, @Param("cons") String cons);
 
     /**
      * 后台通过标题模糊查找文章
      *
      * @param criteria
-     * @param way 方法
-     * @param cons 约束
+     * @param way      方法
+     * @param cons     约束
      * @return 文章列表
      */
-    List<Article> searchArticleByTitle(@Param("criteria") HashMap<String, Object> criteria,@Param("way") String way,@Param("cons") String cons);
+    List<Article> searchArticleByTitle(@Param("criteria") HashMap<String, Object> criteria, @Param("way") String way, @Param("cons") String cons);
 
 
 }
