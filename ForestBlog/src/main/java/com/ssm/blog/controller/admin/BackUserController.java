@@ -45,6 +45,37 @@ public class BackUserController {
         return modelAndView;
     }
 
+    /**
+     * 编辑密码页面显示
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/editPwd/{id}")
+    public ModelAndView editPwdView(@PathVariable("id") Integer id)  {
+        ModelAndView modelAndView = new ModelAndView();
+
+        User user =  userService.getUserById(id);
+        modelAndView.addObject("user",user);
+
+        modelAndView.setViewName("Admin/User/editPwd");
+        return modelAndView;
+    }
+
+    /**
+     * 编辑密码提交
+     *
+     * @param user
+     * @return
+     */
+
+    @RequestMapping(value = "/editPwdSubmit",method = RequestMethod.POST)
+    public String editPwdSubmit(User user)  {
+        String md5Pwd= MyUtils.strToMd5(user.getUserPass());
+        user.setUserPass(md5Pwd);
+        userService.updateUserPwd(user);
+        return "redirect:/admin";
+    }
 
     /**
      * 编辑用户提交
@@ -54,8 +85,6 @@ public class BackUserController {
      */
     @RequestMapping(value = "/editSubmit",method = RequestMethod.POST)
     public String editUserSubmit(User user)  {
-        String md5Pwd= MyUtils.strToMd5(user.getUserPass());
-        user.setUserPass(md5Pwd);
         userService.updateUser(user);
         return "redirect:/admin";
     }

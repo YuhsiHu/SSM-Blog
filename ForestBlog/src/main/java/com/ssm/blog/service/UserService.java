@@ -24,6 +24,13 @@ public interface UserService {
     void updateUser(User user);
 
     /**
+     * 修改用户密码
+     *
+     * @param user 用户
+     */
+    void updateUserPwd(User user);
+
+    /**
      * 根据用户名和邮箱查询用户
      *
      * @param str 用户名或Email

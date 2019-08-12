@@ -48,6 +48,15 @@
         where user_id = #{userId,jdbcType=INTEGER}
     </update>
 
+    <update id="updatePwd" parameterType="com.ssm.blog.entity.User">
+        update
+        <include refid="tb"/>
+        <set>
+            <if test="userPass != null">user_pass = #{userPass,jdbcType=VARCHAR}</if>
+        </set>
+        where user_id = #{userId,jdbcType=INTEGER}
+    </update>
+
 
     <!--根据用户名或邮箱获得用户-->
     <select id="getUserByNameOrEmail" parameterType="String" resultType="com.ssm.blog.entity.User">

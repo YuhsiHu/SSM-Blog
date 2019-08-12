@@ -34,6 +34,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void updateUserPwd(User user) { userMapper.updatePwd(user); }
+
+    @Override
     public User getUserByNameOrEmail(String str) {
         return userMapper.getUserByNameOrEmail(str);
     }

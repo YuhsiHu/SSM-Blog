@@ -27,6 +27,13 @@ public interface UserMapper {
      */
     int update(User user);
 
+    /**
+     * 更新密码
+     *
+     * @param user 用户
+     * @return 影响行数
+     */
+    int updatePwd(User user);
 
     /**
      * 根据用户名或Email获得用户

@@ -100,9 +100,11 @@
                     </a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="/admin/user/edit/${user.userId}">
-                        用户信息
-                    </a>
+                    <a href="javascript:;">用户信息</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/admin/user/edit/${user.userId}">用户信息</a></dd>
+                        <dd><a href="/admin/user/editPwd/${user.userId}">修改密码</a></dd>
+                    </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">设置</a>
