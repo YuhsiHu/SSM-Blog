@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 /**
- * @author liuyanzhao
+ * 公告详情的Controller
  */
 @Controller
 public class NoticeController {

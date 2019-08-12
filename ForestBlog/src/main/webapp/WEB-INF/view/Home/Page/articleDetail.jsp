@@ -261,7 +261,7 @@
                     <form id="comment_form" method="post">
                         <c:if test="${sessionScope.user!=null}">
                             <div class="user_avatar">
-                                <img alt="言曌"
+                                <img alt=""
                                      src="${sessionScope.user.userAvatar}"
                                      class="avatar avatar-64 photo" height="64" width="64">
                                 登录者：${sessionScope.user.userNickname}
@@ -296,12 +296,11 @@
                                     <input type="email" name="commentAuthorEmail" id="author_email" class="" value=""
                                            tabindex="3" required>
                                 </p>
-
                             </c:if>
                         </div>
                         <div class="clear"></div>
                         <p class="form-submit">
-                            <input id="submit" name="submit" type="submit" tabindex="5" value="提交评论">
+                            <input id="submit" name="submit" type="submit" tabindex="4" value="提交评论">
                             <input type="hidden" name="commentArticleId"
                                    value="${article.articleId}" id="article_id">
                             <input type="hidden" name="commentPid" id="comment_pid" value="0">
@@ -447,19 +446,11 @@
                 var email = localStorage.getItem("email");
                 $("#author_email").val(email == 'undefined' ? '' : email);
             }
-            if ($('#author_url').val() == '') {
-                var url = localStorage.getItem("url");
-                $("#author_url").val(url == 'undefined' ? '' : url);
-            }
         });
 
         var articleId = $("#articleDetail").attr("data-id");
         increaseViewCount(articleId);
-        layui.code({
-            elem: 'pre',//默认值为.layui-code
-            // skin: 'notepad', //如果要默认风格，不用设定该key。
-            about: false
-        });
+
 
     </script>
 

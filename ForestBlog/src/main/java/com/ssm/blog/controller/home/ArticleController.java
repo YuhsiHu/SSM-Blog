@@ -113,10 +113,10 @@ public class ArticleController {
     @ResponseBody
     public String increaseLikeCount(@PathVariable("id") Integer id) {
         Article article = articleService.getArticleByStatusAndId(ArticleStatus.PUBLISH.getValue(), id);
-        Integer articleCount = article.getArticleLikeCount() + 1;
-        article.setArticleLikeCount(articleCount);
+        Integer articleLikeCount = article.getArticleLikeCount() + 1;
+        article.setArticleLikeCount(articleLikeCount);
         articleService.updateArticle(article);
-        return JSON.toJSONString(articleCount);
+        return JSON.toJSONString(articleLikeCount);
     }
 
     /**

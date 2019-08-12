@@ -16,9 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- *
- * @author 言曌
- * @date 2017/9/5
+ *侧栏中热评文章的Controller
  */
 @Controller
 public class LinkController {
