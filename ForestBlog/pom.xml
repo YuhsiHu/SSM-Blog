@@ -136,6 +136,11 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.21</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>1.7.2</version>
+        </dependency>
         <!-- apache共公包 -->
         <dependency>
             <groupId>commons-logging</groupId>

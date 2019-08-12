@@ -180,7 +180,6 @@ public class ArticleServiceImpl implements ArticleService {
 //            List<Tag> tagList = articleTagRefMapper.listTagByArticleId(articleList.get(i).getArticleId());
 //            articleList.get(i).setTagList(tagList);
         }
-        System.out.println(articleList.toString());
         return new PageInfo<>(articleList);
     }
 
