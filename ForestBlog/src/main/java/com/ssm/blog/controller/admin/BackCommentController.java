@@ -69,7 +69,7 @@ public class BackCommentController {
     }
 
     /**
-     * 删除评论
+     * 删除评论及其子评论S
      *
      * @param id 批量ID
      */

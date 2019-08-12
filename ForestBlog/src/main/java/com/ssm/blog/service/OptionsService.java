@@ -5,8 +5,7 @@ import com.ssm.blog.entity.Options;
 
 /**
  *
- * @author 言曌
- * @date 2017/9/7
+ * 设置选项管理
  */
 public interface OptionsService {
     /**

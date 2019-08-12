@@ -8,11 +8,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author 言曌
- * @date 2017/9/7
- */
+
 @Service
 public class OptionsServiceImpl implements OptionsService {
 
