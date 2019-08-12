@@ -4,7 +4,7 @@ import com.ssm.blog.entity.Options;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * @author liuyanzhao
+ * 后台选项
  */
 @Mapper
 public interface OptionsMapper {

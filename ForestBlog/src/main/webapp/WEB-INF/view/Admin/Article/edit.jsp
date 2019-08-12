@@ -122,7 +122,7 @@
         温馨提示：
         1、文章内容的数据表字段类型为MEDIUMTEXT,每篇文章内容请不要超过500万字 <br>
         2、写文章之前，请确保标签和分类存在，否则可以先新建；请勿刷新页面，博客不会自动保存 <br>
-        3、插入代码前，可以点击 <a href="http://liuyanzhao.com/code-highlight.html" target="_blank">代码高亮</a>,将代码转成HTML格式
+        3、插入代码前，可以点击 <a href="http://tool.oschina.net/highlight" target="_blank">代码高亮</a>,将代码转成HTML格式
     </blockquote>
 
 </rapid:override>
