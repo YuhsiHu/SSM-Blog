@@ -2,18 +2,15 @@ package com.ssm.blog.controller.home;
 
 import com.github.pagehelper.PageInfo;
 import com.ssm.blog.entity.*;
-
 import com.ssm.blog.enums.ArticleStatus;
 import com.ssm.blog.enums.LinkStatus;
 import com.ssm.blog.enums.NoticeStatus;
-
-import com.ssm.blog.entity.*;
-import com.ssm.blog.service.*;
 import com.ssm.blog.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,8 +18,6 @@ import java.util.List;
 /**
  * 用户的controller
  *
- * @author 言曌
- * @date 2017/8/24
  */
 @Controller
 public class IndexController {

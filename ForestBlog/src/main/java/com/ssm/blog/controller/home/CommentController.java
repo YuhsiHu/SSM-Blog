@@ -19,8 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 /**
- * @author 言曌
- * @date 2017/9/10
+ * 文章评论的Controller
  */
 
 @Controller

@@ -17,8 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * @author 言曌
- * @date 2017/9/2
+ * 标签的控制器
  */
 @Controller
 public class TagController {
