@@ -5,7 +5,7 @@ import com.ssm.blog.entity.Menu;
 import java.util.List;
 
 /**
- * 后台菜单
+ * 菜单mapper
  */
 public interface MenuMapper {
 
