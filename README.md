@@ -28,10 +28,15 @@ This project uses Maven and Lombok. Go check them out if you don't have them loc
  - forest_blog.sql: 数据库文件，请先创建数据库，然后以运行sql文件方式导入。
 6.	新建数据库forest_blog，导入数据库（即forest_blog.sql）。注意，数据库的编码和排序规则是utf-8和utf-8_general_ci。数据库默认用户名root，密码 123456。
 7.	修改db.properties文件，在src/main/resources中里面有MySQL，请确保已安装和启动MySQL。注意修改数据库地址、用户名和密码。
-8.	根据项目提示，修改数据库配置和tomcat配置，注意在tomcat上部署Forestblog war_exploded的时候，applicationcontext要改为/（原本会是Forestblog/），在之后。
-1. 该项目中，文件上传是传到本地，且和项目文件夹不在一起，就是说是源码和上传目录是分离的。比如我们把 uploads 目录放到D盘根目录，比如有一张图片路径是D:/uploads/2019/08/avatar.jpg，我们想在项目中以(http://loclahost:8080/uploads/2019/08/avatar.jpg)方式访问，需要以下两步：
-    - 修改 UploadFileController.java 中上传路径，需要修改 rootPath 为你指定的 uploads 目录，如String rootPath ="E:/uploads/";
+8.	根据项目提示，修改数据库配置和tomcat配置，注意在tomcat上部署Forestblog war_exploded的时候，applicationcontext要改为/（原本会是Forestblog/），在之后。如图：
+![warexploded](image/warexploded.png)
+9. 该项目中，文件上传是传到本地，且和项目文件夹不在一起，就是说是源码和上传目录是分离的。比如我们把 uploads 目录放到D盘根目录，比如有一张图片路径是D:/uploads/2019/08/avatar.jpg，我们想在项目中以(http://loclahost:8080/uploads/2019/08/avatar.jpg)方式访问，需要以下两步：
+    - 修改 UploadFileController.java 中上传路径，需要修改 rootPath 为你指定的 uploads 目录，如String rootPath ="E:/uploads/"。如图：
+     ![修改文件上传地址](image/修改文件上传地址.png)
     - 给IDEA设置静态资源映射，在tomcat配置中 Deployment 里面添加，将uploads的artifact处改为external sources，换为uploads所在文件夹。
+    ![uploads](image/uploads.png)
+
+#### 环境配置有问题的可以随时提issue解决，如果觉得这个项目有用的话，给个star吧~ ####
 
 
 ## Functions
