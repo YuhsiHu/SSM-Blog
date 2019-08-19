@@ -83,5 +83,12 @@
     </where>
     ORDER BY link_status ASC,link_order DESC,link_id ASC
   </select>
-  
+
+  <select id="getLinkByLinkName" resultType="com.ssm.blog.entity.Link">
+    SELECT <include refid="Base_Column_List" />
+    FROM <include refid="tb"/>
+    <where>
+      link_name= #{linkName,jdbcType=VARCHAR}
+    </where>
+  </select>
 </mapper>

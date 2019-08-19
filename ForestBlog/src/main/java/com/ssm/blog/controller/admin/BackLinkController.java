@@ -8,10 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import org.json.JSONObject;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 
 /**
@@ -64,12 +68,25 @@ public class BackLinkController {
      * @return 响应
      */
     @RequestMapping(value = "/insertSubmit",method = RequestMethod.POST)
+    @ResponseBody
     public String insertLinkSubmit(Link link)  {
-        link.setLinkCreateTime(new Date());
-        link.setLinkUpdateTime(new Date());
-        link.setLinkStatus(1);
-        linkService.insertLink(link);
-        return "redirect:/admin/link/insert";
+        Map<String, Object> map = new HashMap<String, Object>();
+        Link i=linkService.getLinkByLinkName(link.getLinkName());
+        if(i!=null){
+            map.put("code",0);
+            map.put("msg","链接名已存在");
+        }
+        else {
+            map.put("code",1);
+            map.put("msg","");
+            link.setLinkCreateTime(new Date());
+            link.setLinkUpdateTime(new Date());
+            link.setLinkStatus(1);
+            linkService.insertLink(link);
+            //  return "redirect:/admin/link/insert";
+        }
+        String result = new JSONObject(map).toString();
+        return  result;
     }
 
     /**
