@@ -225,6 +225,32 @@
             <version>4.1.13</version>
         </dependency>
 
+        <!-- 以下四个包跟测试相关 -->
+        <!-- selenium自动化测试 -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.14.0</version>
+        </dependency>
+        <!-- 与 selenium-java 版本要一致 -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>3.14.0</version>
+        </dependency>
+        <!--junit-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+        </dependency>
+        <!-- hamcrest -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
     </dependencies>
 
     <properties>

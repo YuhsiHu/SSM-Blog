@@ -24,7 +24,16 @@ public class BackOptionsFunctions {
 
   @Test
   public void testBackOptionsFunctions() throws Exception {
-    driver.get("http://localhost:8080/admin/options");
+    driver.get("http://localhost:8080/");
+    driver.findElement(By.linkText("登录")).click();
+    driver.findElement(By.id("user_login")).click();
+    driver.findElement(By.id("user_login")).clear();
+    driver.findElement(By.id("user_login")).sendKeys("admin");
+    driver.findElement(By.id("loginForm")).click();
+    driver.findElement(By.id("user_pass")).click();
+    driver.findElement(By.id("user_pass")).clear();
+    driver.findElement(By.id("user_pass")).sendKeys("123456");
+    driver.findElement(By.id("submit-btn")).click();
     driver.findElement(By.linkText("设置")).click();
     driver.findElement(By.linkText("主要选项")).click();
     driver.findElement(By.name("optionSiteTitle")).click();
@@ -33,40 +42,7 @@ public class BackOptionsFunctions {
     driver.findElement(By.name("optionSiteDescrption")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Github'])[1]/following::button[1]")).click();
     driver.findElement(By.linkText("前台")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_1 | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='×'])[1]/preceding::div[1]")).click();
     driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
-    driver.findElement(By.name("optionSiteTitle")).click();
-    driver.findElement(By.name("optionMetaKeyword")).click();
-    driver.findElement(By.name("optionMetaKeyword")).clear();
-    driver.findElement(By.name("optionMetaKeyword")).sendKeys("SSM博客,YuhsiHu,分享开发经验");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Github'])[1]/following::button[1]")).click();
-    driver.findElement(By.linkText("前台")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_2 | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='阅读全文'])[10]/following::i[1]")).click();
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='基本信息'])[2]/following::li[1]")).click();
-    driver.findElement(By.name("optionAboutsiteContent")).click();
-    driver.findElement(By.name("optionAboutsiteContent")).click();
-    driver.findElement(By.name("optionAboutsiteContent")).clear();
-    driver.findElement(By.name("optionAboutsiteContent")).sendKeys("测试个人说明。");
-    driver.findElement(By.name("optionAboutsiteWeibo")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Github'])[1]/following::button[1]")).click();
-    driver.findElement(By.linkText("前台")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_3 | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='个人博客系统'])[1]/following::div[1]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='测试个人说明。'])[1]/following::a[3]")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_4 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_3 | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='测试个人说明。'])[1]/following::a[4]")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_5 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_3 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
   }
 
   @After
@@ -108,6 +84,19 @@ public class BackOptionsFunctions {
       return alertText;
     } finally {
       acceptNextAlert = true;
+    }
+  }
+
+  public static void main(String args[]){
+    String url="http://localhost:8080/";
+    System.setProperty("webdriver.gecko.driver", "src\\test\\geckodriver.exe");
+    BackOptionsFunctions test=new BackOptionsFunctions();
+    try {
+      test.setUp();
+      test.testBackOptionsFunctions();
+      test.tearDown();
+    }catch(Exception e){
+      e.printStackTrace();
     }
   }
 }

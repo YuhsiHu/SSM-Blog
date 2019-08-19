@@ -17,7 +17,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import java.util.*;
-public class Test {
+public class HomeMenuAndSidebarFunction {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -32,14 +32,27 @@ public class Test {
     driver.quit();
   }
   @Test
-  public void () {
+  public void testHomeAndSidebarFunction() throws Exception{
     driver.get("http://localhost:8080/");
     driver.manage().window().setSize(new Dimension(1550, 838));
     driver.findElement(By.cssSelector(".menu-item:nth-child(3) .font-text")).click();
-    driver.findElement(By.linkText("个人博客系统")).click();
+    driver.findElement(By.linkText("测试个人博客系统")).click();
     driver.findElement(By.cssSelector(".menu-item:nth-child(4) .font-text")).click();
     driver.findElement(By.linkText("MySQL常用命令语句")).click();
     driver.findElement(By.cssSelector(".tag-link-129:nth-child(1)")).click();
-    driver.findElement(By.linkText("SpringMVC 表单中文乱码解决方案")).click();
+    driver.findElement(By.linkText("Java中File类的使用")).click();
+  }
+
+  public static void main(String args[]){
+    String url="http://localhost:8080/";
+    System.setProperty("webdriver.gecko.driver", "src\\test\\geckodriver.exe");
+    HomeMenuAndSidebarFunction test=new HomeMenuAndSidebarFunction();
+    try {
+      test.setUp();
+      test.testHomeAndSidebarFunction();
+      test.tearDown();
+    }catch(Exception e){
+      e.printStackTrace();
+    }
   }
 }
