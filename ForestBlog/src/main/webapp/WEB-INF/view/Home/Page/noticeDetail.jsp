@@ -36,7 +36,7 @@
             <article class="post" style="min-height: 500px;">
                 <header class="entry-header">
                     <h1 class="entry-title">
-                           ${notice.noticeTitle}
+                            ${notice.noticeTitle}
                     </h1>
                 </header><!-- .entry-header -->
                 <div class="entry-content">
@@ -59,7 +59,8 @@
                             <li>A+</li>
                         </ul>
                         <div class="single-cat-tag">
-                            <div class="single-cat">日期：<fmt:formatDate value="${notice.noticeCreateTime}" pattern="yyyy年MM月dd日"/>
+                            <div class="single-cat">日期：<fmt:formatDate value="${notice.noticeCreateTime}"
+                                                                       pattern="yyyy年MM月dd日"/>
                             </div>
                         </div>
                     </footer><!-- .entry-footer -->
@@ -68,7 +69,6 @@
                     <div class="clear"></div>
                 </div><!-- .entry-content -->
             </article><!-- #post -->
-
 
 
         </main>

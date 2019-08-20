@@ -17,11 +17,13 @@
         .layui-word-aux {
             color: #FF5722 !important;
         }
+
         .layui-form-label {
             width: 120px;
         }
+
         input {
-            border: 0!important;
+            border: 0 !important;
         }
     </style>
 </rapid:override>
@@ -47,7 +49,7 @@
           method="post">
         <input type="hidden" name="userId" id="userId" value="${user.userId}">
         <div class="layui-form-item">
-            <a class="layui-btn layui-btn-primary"  href="/admin/user/edit/${user.userId}">编辑</a>
+            <a class="layui-btn layui-btn-primary" href="/admin/user/edit/${user.userId}">编辑</a>
             <label class="layui-form-label">头像</label>
             <div class="layui-input-inline">
                 <div class="layui-upload">
@@ -62,7 +64,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">用户名 </label>
             <div class="layui-input-inline">
-                <input type="text" value="${user.userName}"  id="userName" required
+                <input type="text" value="${user.userName}" id="userName" required
                        autocomplete="off" class="layui-input" disabled>
             </div>
             <div class="layui-form-mid layui-word-aux" id="userNameTips"></div>
@@ -78,7 +80,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">昵称 </label>
             <div class="layui-input-inline">
-                <input type="text"  value="${user.userNickname}" required
+                <input type="text" value="${user.userNickname}" required
                        placeholder="" autocomplete="off" min="2" max="10"
                        class="layui-input" disabled>
             </div>
@@ -87,7 +89,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">Email </label>
             <div class="layui-input-inline">
-                <input type="email"  value="${user.userEmail}" id="userEmail" required
+                <input type="email" value="${user.userEmail}" id="userEmail" required
                        class="layui-input" disabled>
             </div>
             <div class="layui-form-mid layui-word-aux" id="userEmailTips"></div>
@@ -95,14 +97,15 @@
         <div class="layui-form-item">
             <label class="layui-form-label">URL </label>
             <div class="layui-input-inline">
-                <input type="url"  value="${user.userUrl}" placeholder="" autocomplete="off"
+                <input type="url" value="${user.userUrl}" placeholder="" autocomplete="off"
                        class="layui-input" disabled>
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">注册时间 </label>
             <div class="layui-input-inline">
-                <input type="text"  value="<fmt:formatDate value="${user.userRegisterTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
+                <input type="text"
+                       value="<fmt:formatDate value="${user.userRegisterTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
 " placeholder="" autocomplete="off"
                        class="layui-input" disabled>
             </div>
@@ -110,7 +113,8 @@
         <div class="layui-form-item">
             <label class="layui-form-label">最后登录时间 </label>
             <div class="layui-input-inline">
-                <input type="text"  value='<fmt:formatDate value="${user.userLastLoginTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
+                <input type="text"
+                       value='<fmt:formatDate value="${user.userLastLoginTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
 ' placeholder="" autocomplete="off"
                        class="layui-input" disabled>
             </div>
@@ -118,14 +122,14 @@
         <div class="layui-form-item">
             <label class="layui-form-label">最后登录IP </label>
             <div class="layui-input-inline">
-                <input type="text"  value="${user.userLastLoginIp}" placeholder="" autocomplete="off"
+                <input type="text" value="${user.userLastLoginIp}" placeholder="" autocomplete="off"
                        class="layui-input" disabled>
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">状态 </label>
             <div class="layui-input-inline">
-                <input type="text"  value='<c:choose>
+                <input type="text" value='<c:choose>
                     <c:when test="${user.userStatus==0}">禁用
                     </c:when>
                     <c:otherwise>正常

@@ -13,19 +13,23 @@
     <style>
         /*覆盖 layui*/
         .layui-input-block {
-            margin:0px 10px;
+            margin: 0px 10px;
         }
+
         .layui-table {
             margin-top: 0;
         }
+
         .layui-col-md4 {
-            padding:10px;
+            padding: 10px;
         }
+
         .layui-col-md8 {
-            padding:10px;
+            padding: 10px;
         }
+
         .layui-btn {
-            margin: 2px 0!important;
+            margin: 2px 0 !important;
         }
     </style>
 </rapid:override>
@@ -41,8 +45,8 @@
     </blockquote>
 
     <div class="layui-row">
-        <div class="layui-col-md4" >
-            <form class="layui-form"  method="post" id="myForm" action="/admin/menu/editSubmit">
+        <div class="layui-col-md4">
+            <form class="layui-form" method="post" id="myForm" action="/admin/menu/editSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <strong>修改菜单项目</strong>
@@ -51,31 +55,36 @@
                     <div class="layui-input-block">
                         名称
                         <span style="color: #FF5722; ">*</span>
-                        <input type="text" name="menuName" value="${menu.menuName}" autocomplete="off" class="layui-input" required>
+                        <input type="text" name="menuName" value="${menu.menuName}" autocomplete="off"
+                               class="layui-input" required>
                     </div>
                     <br>
                     <div class="layui-input-block">
                         URL
                         <span style="color: #FF5722; ">*</span>
-                        <input type="text" name="menuUrl" value="${menu.menuUrl}" autocomplete="off" class="layui-input" required>
+                        <input type="text" name="menuUrl" value="${menu.menuUrl}" autocomplete="off" class="layui-input"
+                               required>
                     </div>
                     <br>
                     <div class="layui-input-block">
                         图标
-                        <input type="text" name="menuIcon" value="${menu.menuIcon}" layui-input="" class="layui-input"  >
+                        <input type="text" name="menuIcon" value="${menu.menuIcon}" layui-input="" class="layui-input">
                     </div>
                     <br>
                     <div class="layui-input-block">
                         菜单位置
                         <select name="menuLevel" id="">
                             <option value="1" <c:if test="${menu.menuLevel==1}">selected</c:if>>顶部菜单</option>
-                            <option value="2" <c:if test="${menu.menuLevel==2}">selected</c:if> >主要菜单</option>
+                            <option value="2"
+                                    <c:if test="${menu.menuLevel==2}">selected</c:if> >主要菜单
+                            </option>
                         </select>
                     </div>
                     <br>
                     <div class="layui-input-block">
                         Order
-                        <input type="number" name="menuOrder" value="${menu.menuOrder}" layui-input="" class="layui-input" min="0" max="10" required>
+                        <input type="number" name="menuOrder" value="${menu.menuOrder}" layui-input=""
+                               class="layui-input" min="0" max="10" required>
                     </div>
                     <br>
                     <br>
@@ -88,7 +97,8 @@
                 温馨提示：
                 <ul>
                     <li>1、Order范围为0-10,默认为1</li>
-                    <li>2、图标为名称前面的字体图标，可选。采用的是 <a href="http://fontawesome.io/icons/" target="_blank">fontawesome</a>图标</li>
+                    <li>2、图标为名称前面的字体图标，可选。采用的是 <a href="http://fontawesome.io/icons/" target="_blank">fontawesome</a>图标
+                    </li>
                     <li>3、目前只有两种菜单：顶部菜单和主要菜单</li>
                 </ul>
             </blockquote>
@@ -103,7 +113,7 @@
                 <div class="layui-tab-content" style="height: auto;">
                     <div class="layui-tab-item layui-show">
 
-                        <table class="layui-table" >
+                        <table class="layui-table">
                             <colgroup>
                                 <col width="100">
                                 <col width="200">
@@ -131,8 +141,11 @@
                                         </td>
                                         <td>${m.menuOrder}</td>
                                         <td>
-                                            <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">编辑</a>
-                                            <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                            <a href="/admin/menu/edit/${m.menuId}"
+                                               class="layui-btn layui-btn-mini">编辑</a>
+                                            <a href="/admin/menu/delete/${m.menuId}"
+                                               class="layui-btn layui-btn-danger layui-btn-mini"
+                                               onclick="return confirmDelete()">删除</a>
                                         </td>
                                     </tr>
                                 </c:if>
@@ -141,7 +154,7 @@
                         </table>
                     </div>
                     <divx class="layui-tab-item">
-                        <table class="layui-table" >
+                        <table class="layui-table">
                             <colgroup>
                                 <col width="100">
                                 <col width="200">
@@ -170,8 +183,11 @@
                                         </td>
                                         <td>${m.menuOrder}</td>
                                         <td>
-                                            <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">编辑</a>
-                                            <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                            <a href="/admin/menu/edit/${m.menuId}"
+                                               class="layui-btn layui-btn-mini">编辑</a>
+                                            <a href="/admin/menu/delete/${m.menuId}"
+                                               class="layui-btn layui-btn-danger layui-btn-mini"
+                                               onclick="return confirmDelete()">删除</a>
                                         </td>
                                     </tr>
                                 </c:if>
@@ -192,4 +208,4 @@
     </script>
 </rapid:override>
 
-<%@ include file="../Public/framework.jsp"%>
+<%@ include file="../Public/framework.jsp" %>

@@ -19,7 +19,7 @@
                 <div class="about-main">
                     <div class="about-img">
                         <img src="${options.optionAboutsiteAvatar}"
-                        alt="QR Code">
+                             alt="QR Code">
                     </div>
                     <div class="about-name">${options.optionAboutsiteTitle}</div>
                     <div class="about-the">
@@ -31,7 +31,7 @@
                     <li class="weixin">
                         <a title="微信" id="weixin_btn" rel="external nofollow">
                             <i class="fa fa-weixin"> </i>
-                            <div id="weixin_code" class="hide" >
+                            <div id="weixin_code" class="hide">
                                 <img src="${options.optionAboutsiteWechat}" alt="">
                             </div>
                         </a>
@@ -82,7 +82,8 @@
                 <li><i class="fa fa-eye"></i> 浏览总量：${siteBasicStatistics[5]} 次</li>
                 <li><i class="fa fa-pencil-square-o"></i> 最后更新：
                     <span style="color:#2F889A">
-                                        <fmt:formatDate value="${lastUpdateArticle.articleUpdateTime}" pattern="yyyy年MM月dd日"/>
+                                        <fmt:formatDate value="${lastUpdateArticle.articleUpdateTime}"
+                                                        pattern="yyyy年MM月dd日"/>
 
                                    </span>
                 </li>
@@ -118,15 +119,15 @@
         <div id="message" class="message-widget">
             <ul>
                 <c:forEach items="${recentCommentList}" var="r">
-                <li style="border: none;">
-                    <a href="/article/${r.commentArticleId}/#anchor-comment-${r.commentId}"  rel="external nofollow">
-                        <%--<img alt="" src="${r.commentAuthorAvatar}" class="avatar avatar-64 photo" height="64" width="64">--%>
-                        <span class="comment_author">
+                    <li style="border: none;">
+                        <a href="/article/${r.commentArticleId}/#anchor-comment-${r.commentId}" rel="external nofollow">
+                                <%--<img alt="" src="${r.commentAuthorAvatar}" class="avatar avatar-64 photo" height="64" width="64">--%>
+                            <span class="comment_author">
                             <strong>${r.commentAuthorName}</strong>
                         </span>
-                            ${r.commentContent}
-                    </a>
-                </li>
+                                ${r.commentContent}
+                        </a>
+                    </li>
                 </c:forEach>
             </ul>
         </div>
@@ -135,7 +136,6 @@
     <%--最新评论 end--%>
 
 </div>
-
 
 
 <%--博客主体-右侧侧边栏 end--%>

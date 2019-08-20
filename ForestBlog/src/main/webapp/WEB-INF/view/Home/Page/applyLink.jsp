@@ -37,35 +37,38 @@
             <article class="post" style="min-height: 500px;">
                 <header class="entry-header">
                     <h1 class="entry-title">
-                           申请友链
+                        申请友链
                     </h1>
                 </header><!-- .entry-header -->
                 <div class="entry-content">
                     <div class="single-content">
-                        <form class="layui-form layui-form-pane" id="applyLinkForm"  method="post">
+                        <form class="layui-form layui-form-pane" id="applyLinkForm" method="post">
                             <div class="layui-form-item">
                                 <label class="layui-form-label">网站名称</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="linkName"  placeholder="如：${options.optionSiteTitle}" class="layui-input" required>
+                                    <input type="text" name="linkName" placeholder="如：${options.optionSiteTitle}"
+                                           class="layui-input" required>
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">网站地址</label>
                                 <div class="layui-input-block">
-                                    <input type="url" name="linkUrl"  placeholder="如：" class="layui-input" required>
+                                    <input type="url" name="linkUrl" placeholder="如：" class="layui-input" required>
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">网站描述</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="linkDescription" placeholder="如：${options.optionSiteDescrption}" class="layui-input" required>
+                                    <input type="text" name="linkDescription"
+                                           placeholder="如：${options.optionSiteDescrption}" class="layui-input" required>
                                 </div>
                             </div>
 
                             <div class="layui-form-item layui-form-text">
                                 <label class="layui-form-label">备注</label>
                                 <div class="layui-input-block">
-                                    <textarea placeholder="申请原因和联系方式" class="layui-textarea" name="linkOwnerContact" maxlength="100"></textarea>
+                                    <textarea placeholder="申请原因和联系方式" class="layui-textarea" name="linkOwnerContact"
+                                              maxlength="100"></textarea>
                                 </div>
                             </div>
                             <div class="layui-form-item">
@@ -96,7 +99,6 @@
                     <div class="clear"></div>
                 </div><!-- .entry-content -->
             </article><!-- #post -->
-
 
 
         </main>

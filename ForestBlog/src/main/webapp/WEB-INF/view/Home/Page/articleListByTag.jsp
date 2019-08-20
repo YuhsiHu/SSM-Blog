@@ -70,7 +70,7 @@
 
                             <div class="entry-content">
                                 <div class="archive-content">
-                                   ${a.articleSummary}...
+                                        ${a.articleSummary}...
                                 </div>
                                 <span class="title-l"></span>
                                 <span class="new-icon">

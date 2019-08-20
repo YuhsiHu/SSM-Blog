@@ -5,9 +5,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
-    <rapid:override name="title">
-        - 链接列表
-    </rapid:override>
+<rapid:override name="title">
+    - 链接列表
+</rapid:override>
 <rapid:override name="header-style">
     <style>
         /*覆盖 layui*/
@@ -17,7 +17,7 @@
         }
 
         .layui-btn {
-            margin: 2px 0!important;
+            margin: 2px 0 !important;
         }
     </style>
 </rapid:override>
@@ -30,7 +30,7 @@
         </span>
     </blockquote>
 
-    <table class="layui-table" >
+    <table class="layui-table">
         <colgroup>
             <col width="100">
             <col width=50">
@@ -57,19 +57,19 @@
         <c:forEach items="${linkList}" var="l">
             <tr>
                 <td>
-                    ${l.linkName}
+                        ${l.linkName}
                 </td>
-                <td >
+                <td>
                     <a href="${l.linkUrl}" target="_blank">${l.linkUrl}</a>
                 </td>
                 <td>
-                    ${l.linkOwnerContact}
+                        ${l.linkOwnerContact}
                 </td>
                 <td>
-                      <fmt:formatDate value="${l.linkUpdateTime}" pattern="yyyy年MM月dd日"/>
+                    <fmt:formatDate value="${l.linkUpdateTime}" pattern="yyyy年MM月dd日"/>
                 </td>
                 <td>
-                    ${l.linkOrder}
+                        ${l.linkOrder}
                 </td>
                 <td>
                     <c:choose>
@@ -83,7 +83,8 @@
                 </td>
                 <td>
                     <a href="/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">编辑</a>
-                    <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                    <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini"
+                       onclick="return confirmDelete()">删除</a>
                 </td>
                 <td>${l.linkId}</td>
             </tr>
@@ -93,9 +94,6 @@
     </table>
 
 
-
-
-
 </rapid:override>
 <rapid:override name="footer-script">
     <script>
@@ -103,4 +101,4 @@
     </script>
 </rapid:override>
 
-<%@ include file="../Public/framework.jsp"%>
+<%@ include file="../Public/framework.jsp" %>

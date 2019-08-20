@@ -35,7 +35,7 @@
     <form class="layui-form" action="/admin/article/searchArticle">
 
         <div class="layui-form-item">
-            <label class="layui-form-label" >查找方式</label>
+            <label class="layui-form-label">查找方式</label>
             <div class="layui-input-block">
                 <select name="way" lay-verify="required">
                     <option value=""></option>

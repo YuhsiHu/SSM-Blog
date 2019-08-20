@@ -46,7 +46,8 @@
                         <ul>
                             <c:forEach items="${articleList}" var="a">
                                 <li style="padding: 5px">
-                                    <a href="/article/${a.articleId}" title="ajax实现form表单提交" target="_blank">${a.articleTitle}</a>
+                                    <a href="/article/${a.articleId}" title="ajax实现form表单提交"
+                                       target="_blank">${a.articleTitle}</a>
                                 </li>
                             </c:forEach>
 
@@ -66,7 +67,8 @@
                                         <c:forEach items="${categoryList}" var="c2">
                                             <c:if test="${c2.categoryPid==c.categoryId}">
                                                 <li class="cat-item" style="padding: 5px 30px;">
-                                                    <a href="/category/${c2.categoryId}" target="_blank">${c2.categoryName}</a>
+                                                    <a href="/category/${c2.categoryId}"
+                                                       target="_blank">${c2.categoryName}</a>
                                                 </li>
                                             </c:if>
                                         </c:forEach>
@@ -80,7 +82,8 @@
                     <h2 class="layui-colla-title">标签库</h2>
                     <div class="layui-colla-content layui-show">
                         <c:forEach items="${tagList}" var="t">
-                            <a href="/tag/${t.tagId}" style="font-size: ${t.articleCount/4+14}px" title="${t.articleCount}个话题" target="_blank">${t.tagName}</a>
+                            <a href="/tag/${t.tagId}" style="font-size: ${t.articleCount/4+14}px"
+                               title="${t.articleCount}个话题" target="_blank">${t.tagName}</a>
                         </c:forEach>
                     </div>
                 </div>
@@ -99,7 +102,7 @@
 <rapid:override name="footer-script">
     <script>
         //注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
-        layui.use('element', function(){
+        layui.use('element', function () {
             var element = layui.element;
 
             //…

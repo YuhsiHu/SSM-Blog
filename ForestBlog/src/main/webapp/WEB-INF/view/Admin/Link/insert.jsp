@@ -12,19 +12,23 @@
     <style>
         /*覆盖 layui*/
         .layui-input-block {
-            margin:0px 10px;
+            margin: 0px 10px;
         }
+
         .layui-table {
             margin-top: 0;
         }
+
         .layui-col-md4 {
-            padding:10px;
+            padding: 10px;
         }
+
         .layui-col-md8 {
-            padding:10px;
+            padding: 10px;
         }
+
         .layui-btn {
-            margin: 2px 0!important;
+            margin: 2px 0 !important;
         }
     </style>
 </rapid:override>
@@ -41,7 +45,7 @@
     </blockquote>
     <div class="layui-row">
         <div class="layui-col-md4">
-            <form class="layui-form" method="post" name="linkForm" id="linkForm" >
+            <form class="layui-form" method="post" name="linkForm" id="linkForm">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <strong>编辑链接</strong>
@@ -59,18 +63,19 @@
                     <br>
                     <div class="layui-input-block">
                         联系方式
-                        <input type="text" name="linkOwnerContact" value="" autocomplete="off" class="layui-input" >
+                        <input type="text" name="linkOwnerContact" value="" autocomplete="off" class="layui-input">
                     </div>
                     <br>
                     <div class="layui-input-block">
                         描述
-                        <input type="text" name="linkDescription" value="" autocomplete="off" class="layui-input" >
+                        <input type="text" name="linkDescription" value="" autocomplete="off" class="layui-input">
                     </div>
 
                     <br>
                     <div class="layui-input-block">
                         Order
-                        <input type="number" name="linkOrder" value="" autocomplete="off" class="layui-input" min="0" max="10">
+                        <input type="number" name="linkOrder" value="" autocomplete="off" class="layui-input" min="0"
+                               max="10">
                     </div>
                     <br>
                     <div class="layui-input-block">
@@ -87,7 +92,7 @@
             </blockquote>
         </div>
         <div class="layui-col-md8">
-            <table class="layui-table" >
+            <table class="layui-table">
                 <colgroup>
                     <col width="50">
                     <col width="300">
@@ -120,7 +125,8 @@
                         </td>
                         <td>
                             <a href="/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">编辑</a>
-                            <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                            <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini"
+                               onclick="return confirmDelete()">删除</a>
 
                         </td>
                     </tr>
@@ -141,11 +147,11 @@
                 data: $("#linkForm").serialize(),
                 dataType: "json",
                 success: function (data) {
-                    if(data.code==0) {
+                    if (data.code == 0) {
                         window.alert(data.msg);
-                        window.location="/admin/link/insert";
+                        window.location = "/admin/link/insert";
                     } else {
-                        window.location.href="/admin/lin/insert";
+                        window.location.href = "/admin/lin/insert";
                     }
                 },
                 error: function () {
@@ -160,4 +166,4 @@
 <rapid:override name="footer-script">
 </rapid:override>
 
-<%@ include file="../Public/framework.jsp"%>
+<%@ include file="../Public/framework.jsp" %>

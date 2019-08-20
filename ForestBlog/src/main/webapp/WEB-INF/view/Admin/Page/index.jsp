@@ -49,7 +49,7 @@
                         <td>${p.pageId}</td>
                         <td>${p.pageKey}</td>
                         <td>
-                            ${p.pageTitle}
+                                ${p.pageTitle}
                         </td>
                         <td>
                             <a href="/${p.pageKey}"
@@ -101,15 +101,15 @@
             </tr>
             </thead>
             <tbody>
-                <c:forEach items="${pageList}" var="p">
-                    <c:if test="${p.pageStatus==2}">
-                        <tr>
-                            <td>${p.pageKey}</td>
-                            <td>${p.pageTitle}</td>
-                            <td><a href="/${p.pageKey}" target="_blank">点击查看</a></td>
-                        </tr>
-                    </c:if>
-                </c:forEach>
+            <c:forEach items="${pageList}" var="p">
+                <c:if test="${p.pageStatus==2}">
+                    <tr>
+                        <td>${p.pageKey}</td>
+                        <td>${p.pageTitle}</td>
+                        <td><a href="/${p.pageKey}" target="_blank">点击查看</a></td>
+                    </tr>
+                </c:if>
+            </c:forEach>
             </tbody>
         </table>
     </div>
