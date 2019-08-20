@@ -12,7 +12,7 @@
             <i class="fa fa-home"></i>首页
         </a>
         <i class="fa fa-angle-right">
-            ${page.pageTitle}
+                ${page.pageTitle}
         </i>
 
         <i class="fa fa-angle-right"></i>
@@ -25,7 +25,7 @@
     <%--博客主体-左侧文章正文 start--%>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
-            <article class="post" >
+            <article class="post">
                 <header class="entry-header">
                     <h1 class="entry-title">
                             ${page.pageTitle}
@@ -51,7 +51,8 @@
                             <li>A+</li>
                         </ul>
                         <div class="single-cat-tag">
-                            <div class="single-cat">日期：<fmt:formatDate value="${page.pageCreateTime}" pattern="yyyy年MM月dd日"/>
+                            <div class="single-cat">日期：<fmt:formatDate value="${page.pageCreateTime}"
+                                                                       pattern="yyyy年MM月dd日"/>
                             </div>
                         </div>
                     </footer><!-- .entry-footer -->
@@ -60,7 +61,6 @@
                     <div class="clear"></div>
                 </div><!-- .entry-content -->
             </article><!-- #post -->
-
 
 
         </main>

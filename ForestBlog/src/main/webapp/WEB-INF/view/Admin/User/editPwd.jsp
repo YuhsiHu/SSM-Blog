@@ -13,9 +13,11 @@
         .layui-form-item .layui-input-inline {
             width: 300px;
         }
+
         .layui-form-label {
             width: 120px;
         }
+
         .layui-word-aux {
             color: #FF5722 !important;
         }
@@ -46,7 +48,7 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit lay-filter="demo1" id="submit-btn" onclick="editOK()" >保存</button>
+                <button class="layui-btn" lay-submit lay-filter="demo1" id="submit-btn" onclick="editOK()">保存</button>
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
         </div>
@@ -56,7 +58,7 @@
 </rapid:override>
 <rapid:override name="footer-script">
     <script>
-        function editOK(){
+        function editOK() {
             alert("修改成功");
         }
     </script>

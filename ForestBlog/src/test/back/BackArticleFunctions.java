@@ -27,11 +27,13 @@ public class BackArticleFunctions {
     driver.get("http://localhost:8080/");
     driver.findElement(By.linkText("登录")).click();
     driver.findElement(By.id("user_login")).click();
-    driver.findElement(By.id("user_login")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [doubleClick | id=user_login | ]]
+    driver.findElement(By.id("user_login")).clear();
+    driver.findElement(By.id("user_login")).sendKeys("admin");
     driver.findElement(By.id("loginForm")).click();
+    driver.findElement(By.id("user_pass")).click();
+    driver.findElement(By.id("user_pass")).clear();
+    driver.findElement(By.id("user_pass")).sendKeys("123456");
     driver.findElement(By.id("submit-btn")).click();
-    driver.findElement(By.linkText("退出")).click();
     driver.findElement(By.id("articleTitle")).click();
     driver.findElement(By.id("articleTitle")).clear();
     driver.findElement(By.id("articleTitle")).sendKeys("文章草稿");
@@ -54,10 +56,7 @@ public class BackArticleFunctions {
     driver.findElement(By.id("title")).click();
     driver.findElement(By.id("title")).clear();
     driver.findElement(By.id("title")).sendKeys("新建的文章");
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
     driver.findElement(By.xpath("//body")).click();
-    // ERROR: Caught exception [unknown command [editContent]]
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='*'])[3]/following::input[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='计算机科学'])[2]/following::dd[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='其他技术'])[2]/following::input[1]")).click();
@@ -91,6 +90,7 @@ public class BackArticleFunctions {
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='*'])[3]/following::input[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='其他技术'])[2]/following::dd[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='草稿'])[1]/following::button[1]")).click();
+
   }
 
   @After
@@ -132,6 +132,19 @@ public class BackArticleFunctions {
       return alertText;
     } finally {
       acceptNextAlert = true;
+    }
+  }
+
+  public static void main(String args[]) {
+    String url="http://localhost:8080/";
+    System.setProperty("webdriver.gecko.driver", "src\\test\\geckodriver.exe");
+    BackArticleFunctions test=new BackArticleFunctions();
+    try {
+      test.setUp();
+      test.testBackArticleFunctions();
+      test.tearDown();
+    }catch(Exception e){
+      e.printStackTrace();
     }
   }
 }

@@ -7,7 +7,7 @@
 <rapid:override name="header-style">
     <style>
         .layui-input-block {
-             margin-left: 0!important;;
+            margin-left: 0 !important;;
         }
 
         .layui-col-md6 {
@@ -18,7 +18,7 @@
             min-width: 255px;
             border: 1px solid #e5e5e5;
             /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04); */
-            box-shadow: 0 1px 1px rgba(0,0,0,.04);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
             background: #fff;
         }
 
@@ -32,6 +32,7 @@
         .js .postbox .handlediv {
             display: block;
         }
+
         .wp-core-ui .button-link {
             margin: 0;
             padding: 0;
@@ -62,8 +63,9 @@
             overflow: hidden;
             clip: rect(0 0 0 0);
             border: 0;
-            word-wrap: normal!important;
+            word-wrap: normal !important;
         }
+
         .screen-reader-text span {
             position: absolute;
             margin: -1px;
@@ -73,41 +75,47 @@
             overflow: hidden;
             clip: rect(0 0 0 0);
             border: 0;
-            word-wrap: normal!important;
+            word-wrap: normal !important;
         }
 
-        .metabox-holder .postbox>h3, .metabox-holder .stuffbox>h3, .metabox-holder h2.hndle, .metabox-holder h3.hndle {
+        .metabox-holder .postbox > h3, .metabox-holder .stuffbox > h3, .metabox-holder h2.hndle, .metabox-holder h3.hndle {
             font-size: 14px;
             padding: 8px 12px;
             margin: 0;
             line-height: 1.4;
         }
+
         #dashboard_quick_press form {
             margin: 12px;
         }
+
         form {
             display: block;
             margin-top: 0em;
         }
+
         .postbox .inside, .stuffbox .inside {
             padding: 0 12px 12px;
             line-height: 1.4em;
             font-size: 13px;
         }
+
         .postbox, .stuffbox {
             margin-bottom: 20px;
             padding: 0;
             line-height: 1;
         }
-        Inherited from div#wpwrap
 
+        Inherited from div#wpwrap
         a, div {
             outline: 0;
         }
+
         user agent stylesheet
         div {
             display: block;
         }
+
         Inherited from div.inside
         .postbox .inside, .stuffbox .inside {
             padding: 0 12px 12px;
@@ -118,6 +126,7 @@
         #dashboard_quick_press .drafts li time {
             color: #72777c;
         }
+
         #description-wrap label, #title-wrap label {
             cursor: text;
         }
@@ -150,20 +159,25 @@
         .meta-box-sortables select {
             max-width: 100%;
         }
+
         .js #dashboard_quick_press .drafts {
             border-top: 1px solid #eee;
         }
+
         #dashboard_quick_press .drafts {
             padding: 10px 0 0;
         }
+
         #dashboard_quick_press .drafts .view-all {
             float: right;
             margin: 0 12px 0 0;
         }
+
         #dashboard_quick_press .drafts p {
             margin: 0;
             word-wrap: break-word;
         }
+
         #dashboard_quick_press .drafts h2 {
             line-height: inherit;
         }
@@ -175,18 +189,23 @@
             font-weight: 400;
             color: #23282d;
         }
+
         #dashboard_quick_press .drafts ul {
             margin: 0 12px;
         }
+
         ul {
             list-style: none;
         }
+
         ol, ul {
             padding: 0;
         }
+
         #dashboard_quick_press .drafts li {
             margin-bottom: 1em;
         }
+
         dd, li {
             /* margin-bottom: 6px; */
         }
@@ -196,24 +215,30 @@
             display: list-item;
             text-align: -webkit-match-parent;
         }
-        #dashboard_quick_press .draft-title,.dashboard-comment-wrap {
+
+        #dashboard_quick_press .draft-title, .dashboard-comment-wrap {
             word-wrap: break-word;
         }
+
         a, div {
             outline: 0;
         }
+
         user agent stylesheet
         div {
             display: block;
         }
+
         #dashboard_quick_press .drafts p {
             /* margin: 0; */
             word-wrap: break-word;
         }
+
         p {
             font-size: 13px;
             line-height: 1.5;
         }
+
         h2, h3, p {
             margin: 1em 0;
         }
@@ -291,18 +316,22 @@
 
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <input type="text" name="articleTitle" id="articleTitle" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                                <input type="text" name="articleTitle" id="articleTitle" required lay-verify="required"
+                                       placeholder="请输入标题" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-form-item layui-form-text">
                             <div class="layui-input-block">
-                                <textarea name="articleContent" placeholder="请输入内容" id="articleContent" class="layui-textarea" required></textarea>
+                                <textarea name="articleContent" placeholder="请输入内容" id="articleContent"
+                                          class="layui-textarea" required></textarea>
                             </div>
                         </div>
                         <input type="hidden" name="articleStatus" value="0">
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <button class="layui-btn layui-btn-small" lay-submit lay-filter="formDemo" onclick="insertDraft()">保存草稿</button>
+                                <button class="layui-btn layui-btn-small" lay-submit lay-filter="formDemo"
+                                        onclick="insertDraft()">保存草稿
+                                </button>
                                 <button type="reset" class="layui-btn layui-btn-small layui-btn-primary">重置</button>
                             </div>
                         </div>
@@ -318,7 +347,8 @@
                                     <li>
                                         <div class="draft-title"><a
                                                 href="/admin/article/edit/${a.articleId}">${a.articleTitle}</a>
-                                            <time ><fmt:formatDate value="${a.articleCreateTime}" pattern="yyyy年MM月dd日"/></time>
+                                            <time><fmt:formatDate value="${a.articleCreateTime}"
+                                                                  pattern="yyyy年MM月dd日"/></time>
                                         </div>
                                     </li>
                                 </c:if>

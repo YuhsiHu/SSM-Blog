@@ -58,4 +58,12 @@ public interface LinkMapper {
      * @return  列表
      */
     List<Link> listLink(@Param(value = "status") Integer status);
+
+    /**
+     * 根据linkName查询
+     *
+     * @param linkName 链接ID
+     * @return 影响行数
+     */
+    Link getLinkByLinkName(@Param(value = "linkName") String linkName);
 }

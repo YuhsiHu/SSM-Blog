@@ -24,35 +24,19 @@ public class BackCommentFunctions {
 
   @Test
   public void testBackCommentFunctions() throws Exception {
-    driver.get("http://localhost:8080/admin/notice");
+    driver.get("http://localhost:8080/");
+    driver.findElement(By.linkText("登录")).click();
+    driver.findElement(By.id("user_login")).click();
+    driver.findElement(By.id("user_login")).clear();
+    driver.findElement(By.id("user_login")).sendKeys("admin");
+    driver.findElement(By.id("loginForm")).click();
+    driver.findElement(By.id("user_pass")).click();
+    driver.findElement(By.id("user_pass")).clear();
+    driver.findElement(By.id("user_pass")).sendKeys("123456");
+    driver.findElement(By.id("submit-btn")).click();
     driver.findElement(By.linkText("评论")).click();
-    driver.findElement(By.linkText("回复")).click();
-    driver.findElement(By.name("commentContent")).click();
-    driver.findElement(By.name("commentContent")).clear();
-    driver.findElement(By.name("commentContent")).sendKeys("谢谢化腾的鼓励！");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='我的回复'])[1]/following::button[1]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='回复'])[9]/following::a[1]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='昵称'])[1]/following::div[2]")).click();
-    driver.findElement(By.name("commentAuthorEmail")).clear();
-    driver.findElement(By.name("commentAuthorEmail")).sendKeys("zhangsan@qq.com");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='非常有用，感谢！'])[1]/following::button[1]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='删除'])[9]/following::a[1]")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_1 | ]]
-    driver.findElement(By.linkText("回复")).click();
-    driver.findElement(By.id("comment")).click();
-    driver.findElement(By.id("comment")).clear();
-    driver.findElement(By.id("comment")).sendKeys("谢谢");
-    driver.findElement(By.id("submit")).click();
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='添加链接'])[1]/following::a[1]")).click();
-    driver.findElement(By.linkText("评论")).click();
-    driver.findElement(By.linkText("MySQL常用命令语句")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_2 | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='张三'])[1]/following::span[3]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='登出'])[1]/following::li[2]")).click();
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='马化腾'])[1]/following::td[1]")).click();
+
   }
 
   @After
@@ -94,6 +78,19 @@ public class BackCommentFunctions {
       return alertText;
     } finally {
       acceptNextAlert = true;
+    }
+  }
+
+  public static void main(String args[]){
+    String url="http://localhost:8080/";
+    System.setProperty("webdriver.gecko.driver", "src\\test\\geckodriver.exe");
+    BackCommentFunctions test=new BackCommentFunctions();
+    try {
+      test.setUp();
+      test.testBackCommentFunctions();
+      test.tearDown();
+    }catch(Exception e){
+      e.printStackTrace();
     }
   }
 }

@@ -31,37 +31,37 @@
         </span>
     </blockquote>
 
-    <form class="layui-form"  method="post" id="myForm" action="/admin/comment/editSubmit">
+    <form class="layui-form" method="post" id="myForm" action="/admin/comment/editSubmit">
         <input type="hidden" name="commentId" value="${comment.commentId}">
         <div class="layui-form-item">
             <label class="layui-form-label">昵称 </label>
             <div class="layui-input-block">
-                <input type="text" name="commentAuthorName"  value="${comment.commentAuthorName}" class="layui-input">
+                <input type="text" name="commentAuthorName" value="${comment.commentAuthorName}" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">邮箱 </label>
             <div class="layui-input-block">
-                <input type="text" name="commentAuthorEmail"  value="${comment.commentAuthorEmail}" class="layui-input">
+                <input type="text" name="commentAuthorEmail" value="${comment.commentAuthorEmail}" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">网址 </label>
             <div class="layui-input-block">
-                <input type="text" name="commentAuthorUrl"  value="${comment.commentAuthorUrl}" class="layui-input">
+                <input type="text" name="commentAuthorUrl" value="${comment.commentAuthorUrl}" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">内容</label>
             <div class="layui-input-block">
-                <textarea name="commentContent"  class="layui-textarea">${comment.commentContent}</textarea>
+                <textarea name="commentContent" class="layui-textarea">${comment.commentContent}</textarea>
             </div>
         </div>
 
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit="" lay-filter="demo1">保存</button>
-                <button type="reset" class="layui-btn layui-btn-primary" >重置</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
         </div>
 

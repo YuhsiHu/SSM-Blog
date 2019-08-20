@@ -24,45 +24,18 @@ public class BackPageFunctions {
 
   @Test
   public void testBackPageFunctions() throws Exception {
-    driver.get("http://localhost:8080/admin");
+    driver.get("http://localhost:8080/");
+    driver.findElement(By.linkText("登录")).click();
+    driver.findElement(By.id("user_login")).click();
+    driver.findElement(By.id("user_login")).clear();
+    driver.findElement(By.id("user_login")).sendKeys("admin");
+    driver.findElement(By.id("loginForm")).click();
+    driver.findElement(By.id("user_pass")).click();
+    driver.findElement(By.id("user_pass")).clear();
+    driver.findElement(By.id("user_pass")).sendKeys("123456");
+    driver.findElement(By.id("submit-btn")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='全部标签'])[1]/following::a[1]")).click();
     driver.findElement(By.linkText("全部页面")).click();
-    driver.findElement(By.linkText("编辑")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
-    driver.findElement(By.xpath("//h2")).click();
-    // ERROR: Caught exception [unknown command [editContent]]
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='隐藏'])[1]/following::button[1]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='关于本站'])[1]/following::p[1]")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_1 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
-    driver.findElement(By.linkText("点击查看")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_2 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='全部标签'])[1]/following::a[1]")).click();
-    driver.findElement(By.linkText("添加页面")).click();
-    driver.findElement(By.id("key")).click();
-    driver.findElement(By.id("key")).clear();
-    driver.findElement(By.id("key")).sendKeys("gybz");
-    driver.findElement(By.id("key")).clear();
-    driver.findElement(By.id("key")).sendKeys("gybz2");
-    driver.findElement(By.id("title")).click();
-    driver.findElement(By.id("title")).clear();
-    driver.findElement(By.id("title")).sendKeys("自动测试");
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
-    driver.findElement(By.xpath("//body")).click();
-    // ERROR: Caught exception [unknown command [editContent]]
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)=''])[1]/following::button[1]")).click();
-    driver.findElement(By.id("key")).clear();
-    driver.findElement(By.id("key")).sendKeys("gybzt");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)=''])[1]/following::button[1]")).click();
-    driver.findElement(By.linkText("自动化测试")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_3 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
   }
 
   @After
@@ -104,6 +77,19 @@ public class BackPageFunctions {
       return alertText;
     } finally {
       acceptNextAlert = true;
+    }
+  }
+
+  public static void main(String args[]){
+    String url="http://localhost:8080/";
+    System.setProperty("webdriver.gecko.driver", "src\\test\\geckodriver.exe");
+    BackPageFunctions test=new BackPageFunctions();
+    try {
+      test.setUp();
+      test.testBackPageFunctions();
+      test.tearDown();
+    }catch(Exception e){
+      e.printStackTrace();
     }
   }
 }

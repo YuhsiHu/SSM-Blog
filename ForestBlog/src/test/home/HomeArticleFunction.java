@@ -17,7 +17,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import java.util.*;
-public class Test {
+public class HomeArticleFunction {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -45,7 +45,7 @@ public class Test {
     return whNow.iterator().next();
   }
   @Test
-  public void () {
+  public void testHomeArticleFunction() throws Exception {
     driver.get("http://localhost:8080/");
     driver.manage().window().setSize(new Dimension(1550, 838));
     vars.put("window_handles", driver.getWindowHandles());
@@ -58,9 +58,18 @@ public class Test {
     driver.findElement(By.cssSelector(".tag-link-129:nth-child(1)")).click();
     driver.findElement(By.linkText("Java中ImageIcon路径问题")).click();
     driver.findElement(By.cssSelector(".favorite")).click();
-    driver.findElement(By.id("s1")).click();
-    driver.findElement(By.id("s1")).sendKeys("java");
-    driver.findElement(By.id("searchsubmit1")).click();
-    driver.findElement(By.linkText("Java中ImageIcon路径问题")).click();
+  }
+
+  public static void main(String args[]){
+    String url="http://localhost:8080/";
+    System.setProperty("webdriver.gecko.driver", "src\\test\\geckodriver.exe");
+    HomeArticleFunction test=new HomeArticleFunction();
+    try {
+      test.setUp();
+      test.testHomeArticleFunction();
+      test.tearDown();
+    }catch(Exception e){
+      e.printStackTrace();
+    }
   }
 }

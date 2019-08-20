@@ -17,7 +17,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import java.util.*;
-public class Test {
+public class HomeNoticeFunction {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -32,9 +32,22 @@ public class Test {
     driver.quit();
   }
   @Test
-  public void () {
+  public void testHomeNoticeFunction() throws Exception {
     driver.get("http://localhost:8080/");
     driver.manage().window().setSize(new Dimension(776, 692));
     driver.findElement(By.linkText("这是一个公告测试")).click();
+  }
+
+  public static void main(String args[]){
+    String url="http://localhost:8080/";
+    System.setProperty("webdriver.gecko.driver", "src\\test\\geckodriver.exe");
+    HomeNoticeFunction test=new HomeNoticeFunction();
+    try {
+      test.setUp();
+      test.testHomeNoticeFunction();
+      test.tearDown();
+    }catch(Exception e){
+      e.printStackTrace();
+    }
   }
 }

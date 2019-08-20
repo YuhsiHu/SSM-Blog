@@ -22,10 +22,10 @@
     </style>
 </head>
 <body>
-<div id="page" class="site" style="transform: none;" >
+<div id="page" class="site" style="transform: none;">
 
 
-    <div id="content" class="site-content" style="transform: none;" >
+    <div id="content" class="site-content" style="transform: none;">
 
         <%--博客主体-左侧正文 start--%>
         <div id="primary" class="content-area">
@@ -38,25 +38,29 @@
                     <h2>系统内容错误！</h2>
                     <div class="utilities">
                         <center>
-                        <form name="formsearch" action="/search" id="formkeyword">
-                            <div class="input-container">
-                                <input type="text" class="left" name="query" size="24" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}" onblur="if(this.value==''){this.value='在这里搜索...';}" id="inputString" onkeyup="lookup(this.value);" onblur="fill();" placeholder="搜索..." />
-                                <button id="search"></button>
+                            <form name="formsearch" action="/search" id="formkeyword">
+                                <div class="input-container">
+                                    <input type="text" class="left" name="query" size="24" value="在这里搜索..."
+                                           onfocus="if(this.value=='在这里搜索...'){this.value='';}"
+                                           onblur="if(this.value==''){this.value='在这里搜索...';}" id="inputString"
+                                           onkeyup="lookup(this.value);" onblur="fill();" placeholder="搜索..."/>
+                                    <button id="search"></button>
+                                </div>
+                            </form>
+                            <div id="btn">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a class="button" href="/">返回首页</a>
+                                <a class="button"
+                                   href="http://wpa.qq.com/msgrd?v=3&uin=847064370&site=qq&menu=yes">联系站长</a>
+                                <div class="clear"></div>
                             </div>
-                        </form>
-                        <div id="btn">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a class="button" href="/">返回首页</a>
-                            <a class="button" href="http://wpa.qq.com/msgrd?v=3&uin=847064370&site=qq&menu=yes">联系站长</a>
-                            <div class="clear"></div>
-                        </div>
                         </center>
                     </div>
                 </div>
             </main><!-- .site-main -->
 
         </div>
-      <%--  博客主体-左侧正文 end--%>
+        <%--  博客主体-左侧正文 end--%>
 
 
         <div class="clear"></div>

@@ -5,9 +5,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
-    <rapid:override name="title">
-        - 基本信息列表
-    </rapid:override>
+<rapid:override name="title">
+    - 基本信息列表
+</rapid:override>
 <rapid:override name="header-style">
     <style>
     </style>
@@ -22,115 +22,128 @@
     </blockquote>
     <form class="layui-form" action="/admin/options/editSubmit" method="post">
 
-    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
-        <ul class="layui-tab-title">
-            <li class="layui-this">基本信息</li>
-            <li>小工具</li>
-        </ul>
-        <div class="layui-tab-content">
-            <br><br>
-            <c:choose>
-                <c:when test="${option.optionId>0}">
-                    <input type="hidden" name="optionId" value="${option.optionId}">
-                </c:when>
-                <c:otherwise>
-                    <input type="hidden" name="optionId" value="1">
-                </c:otherwise>
-            </c:choose>
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">基本信息</li>
+                <li>小工具</li>
+            </ul>
+            <div class="layui-tab-content">
+                <br><br>
+                <c:choose>
+                    <c:when test="${option.optionId>0}">
+                        <input type="hidden" name="optionId" value="${option.optionId}">
+                    </c:when>
+                    <c:otherwise>
+                        <input type="hidden" name="optionId" value="1">
+                    </c:otherwise>
+                </c:choose>
 
-            <div class="layui-tab-item layui-show">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">站点名称</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="optionSiteTitle"  value="${option.optionSiteTitle}"   autocomplete="off" class="layui-input">
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">站点名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="optionSiteTitle" value="${option.optionSiteTitle}"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">站点描述</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="optionSiteDescrption" value="${option.optionSiteDescrption}"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">首页描述</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="optionMetaDescrption" value="${option.optionMetaDescrption}"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">首页关键词</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="optionMetaKeyword" value="${option.optionMetaKeyword}"
+                                   autocomplete="off" class="layui-input">
+                        </div>
                     </div>
                 </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">站点描述</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="optionSiteDescrption"   value="${option.optionSiteDescrption}"   autocomplete="off" class="layui-input">
+                <div class="layui-tab-item">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">头像</label>
+                        <div class="layui-input-inline">
+                            <div class="layui-upload">
+                                <div class="layui-upload-list" style="">
+                                    <img class="layui-upload-img" src="${option.optionAboutsiteAvatar}" id="demo1"
+                                         width="100"
+                                         height="100">
+                                    <p id="demoText"></p>
+                                </div>
+                                <button type="button" class="layui-btn" id="test1">上传图片</button>
+                                <input type="hidden" id="optionAboutsiteAvatar" name="optionAboutsiteAvatar"
+                                       value="${option.optionAboutsiteAvatar}">
+                            </div>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">建议 150px*150px</div>
+
                     </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">首页描述</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="optionMetaDescrption"  value="${option.optionMetaDescrption}"   autocomplete="off" class="layui-input">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="optionAboutsiteTitle" value="${option.optionAboutsiteTitle}"
+                                   autocomplete="off" class="layui-input">
+                        </div>
                     </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">首页关键词</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="optionMetaKeyword"  value="${option.optionMetaKeyword}"   autocomplete="off" class="layui-input">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">说明</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="optionAboutsiteContent" value="${option.optionAboutsiteContent}"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">微信二维码</label>
+                        <div class="layui-input-inline">
+                            <div class="layui-upload">
+                                <div class="layui-upload-list" style="">
+                                    <img class="layui-upload-img" src="${option.optionAboutsiteWechat}" id="demo2"
+                                         width="100"
+                                         height="100">
+                                    <p id="demoText2"></p>
+                                </div>
+                                <button type="button" class="layui-btn" id="test2">上传图片</button>
+                                <input type="hidden" id="optionAboutsiteWechat" name="optionAboutsiteWechat"
+                                       value="${option.optionAboutsiteWechat}">
+                            </div>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">建议 430px*430px</div>
+
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">QQ</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="optionAboutsiteQq" value="${option.optionAboutsiteQq}"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">微博</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="optionAboutsiteWeibo" value="${option.optionAboutsiteWeibo}"
+                                   autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">Github</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="optionAboutsiteGithub" value="${option.optionAboutsiteGithub}"
+                                   autocomplete="off" class="layui-input">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="layui-tab-item">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">头像</label>
-                    <div class="layui-input-inline">
-                        <div class="layui-upload">
-                            <div class="layui-upload-list" style="">
-                                <img class="layui-upload-img" src="${option.optionAboutsiteAvatar}" id="demo1" width="100"
-                                     height="100">
-                                <p id="demoText"></p>
-                            </div>
-                            <button type="button" class="layui-btn" id="test1">上传图片</button>
-                            <input type="hidden" id="optionAboutsiteAvatar" name="optionAboutsiteAvatar" value="${option.optionAboutsiteAvatar}">
-                        </div>
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">建议 150px*150px</div>
 
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">昵称</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="optionAboutsiteTitle"   value="${option.optionAboutsiteTitle}"   autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">说明</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="optionAboutsiteContent"   value="${option.optionAboutsiteContent}"   autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">微信二维码</label>
-                    <div class="layui-input-inline">
-                        <div class="layui-upload">
-                            <div class="layui-upload-list" style="">
-                                <img class="layui-upload-img" src="${option.optionAboutsiteWechat}" id="demo2" width="100"
-                                     height="100">
-                                <p id="demoText2"></p>
-                            </div>
-                            <button type="button" class="layui-btn" id="test2">上传图片</button>
-                            <input type="hidden" id="optionAboutsiteWechat" name="optionAboutsiteWechat" value="${option.optionAboutsiteWechat}">
-                        </div>
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">建议 430px*430px</div>
-
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">QQ</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="optionAboutsiteQq"   value="${option.optionAboutsiteQq}"   autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">微博</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="optionAboutsiteWeibo"  value="${option.optionAboutsiteWeibo}"    autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">Github</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="optionAboutsiteGithub"  value="${option.optionAboutsiteGithub}"   autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-            </div>
         </div>
-
-    </div>
 
         <div class="layui-form-item">
             <div class="layui-input-block">
@@ -138,8 +151,6 @@
             </div>
         </div>
     </form>
-
-
 
 
 </rapid:override>
@@ -208,4 +219,4 @@
     </script>
 </rapid:override>
 
-<%@ include file="../Public/framework.jsp"%>
+<%@ include file="../Public/framework.jsp" %>

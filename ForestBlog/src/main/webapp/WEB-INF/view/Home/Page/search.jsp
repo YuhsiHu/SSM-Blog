@@ -15,7 +15,7 @@
     <nav class="breadcrumb">
         <a class="crumbs" href="/">
             <i class="fa fa-home"></i>首页</a>
-            <i class="fa fa-angle-right"></i>
+        <i class="fa fa-angle-right"></i>
         搜索 ${param.keywords} 找到 ${pageInfo.total} 个与之相关的文章
     </nav>
     <%--面包屑导航 end--%>
@@ -24,7 +24,7 @@
 <rapid:override name="left">
     <%--博客主体 start--%>
     <section id="content" class="site-content shadow">
-        <%--博客主体-左侧正文 start--%>
+            <%--博客主体-左侧正文 start--%>
         <section id="primary" class="content-area">
             <main id="main" class="site-main">
                 <c:choose>
@@ -119,7 +119,6 @@
         </section>
     </section>
 </rapid:override>
-
 
 
 <%@ include file="../Public/framework.jsp" %>

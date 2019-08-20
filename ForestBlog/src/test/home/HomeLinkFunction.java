@@ -17,7 +17,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import java.util.*;
-public class Test {
+public class HomeLinkFunction {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -45,7 +45,7 @@ public class Test {
     return whNow.iterator().next();
   }
   @Test
-  public void () {
+  public void testHomeLinkFunction() throws Exception{
     driver.get("http://localhost:8080/");
     driver.manage().window().setSize(new Dimension(1550, 838));
     driver.findElement(By.cssSelector(".menu-item:nth-child(2) .font-text")).click();
@@ -59,28 +59,18 @@ public class Test {
     driver.findElement(By.cssSelector(".layui-btn")).click();
     driver.findElement(By.name("linkDescription")).sendKeys("百度一下，你就知道");
     driver.findElement(By.cssSelector(".layui-btn")).click();
-    assertThat(driver.switchTo().alert().getText(), is("申请成功，请耐心等待审核！"));
-    driver.findElement(By.linkText("登录")).click();
-    driver.findElement(By.id("user_login")).click();
-    driver.findElement(By.id("user_login")).sendKeys("admin");
-    driver.findElement(By.id("user_pass")).click();
-    driver.findElement(By.id("user_pass")).sendKeys("123456");
-    driver.findElement(By.id("submit-btn")).click();
-    driver.findElement(By.linkText("链接")).click();
-    driver.findElement(By.linkText("设置")).click();
-    driver.findElement(By.linkText("菜单")).click();
-    driver.findElement(By.linkText("链接")).click();
-    driver.findElement(By.linkText("全部链接")).click();
-    driver.findElement(By.linkText("编辑")).click();
-    driver.findElement(By.cssSelector(".layui-unselect:nth-child(3) > .layui-anim")).click();
-    driver.findElement(By.cssSelector(".layui-input-block > .layui-btn")).click();
-    vars.put("window_handles", driver.getWindowHandles());
-    driver.findElement(By.linkText("前台")).click();
-    vars.put("win2893", waitForWindow(2000));
-    driver.switchTo().window(vars.get("win2893").toString());
-    vars.put("window_handles", driver.getWindowHandles());
-    driver.findElement(By.linkText("百度")).click();
-    vars.put("win260", waitForWindow(2000));
-    driver.switchTo().window(vars.get("win260").toString());
+  }
+
+  public static void main(String args[]){
+    String url="http://localhost:8080/";
+    System.setProperty("webdriver.gecko.driver", "src\\test\\geckodriver.exe");
+    HomeLinkFunction test=new HomeLinkFunction();
+    try {
+      test.setUp();
+      test.testHomeLinkFunction();
+      test.tearDown();
+    }catch(Exception e){
+      e.printStackTrace();
+    }
   }
 }

@@ -23,7 +23,7 @@
     <%--搜索框--%>
 
     <%--热评文章 start--%>
-    <aside class="widget hot_comment" >
+    <aside class="widget hot_comment">
         <h3 class="widget-title">
             <i class="fa fa-bars"></i>热评文章
         </h3>
@@ -41,7 +41,6 @@
         <div class="clear"></div>
     </aside>
     <%--热评文章 end--%>
-
 
 
 </div>

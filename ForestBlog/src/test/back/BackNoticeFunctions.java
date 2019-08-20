@@ -24,54 +24,20 @@ public class BackNoticeFunctions {
 
   @Test
   public void testBackNoticeFunctions() throws Exception {
-    driver.get("http://localhost:8080/admin/link");
+    driver.get("http://localhost:8080/");
+    driver.findElement(By.linkText("登录")).click();
+    driver.findElement(By.id("user_login")).click();
+    driver.findElement(By.id("user_login")).clear();
+    driver.findElement(By.id("user_login")).sendKeys("admin");
+    driver.findElement(By.id("loginForm")).click();
+    driver.findElement(By.id("user_pass")).click();
+    driver.findElement(By.id("user_pass")).clear();
+    driver.findElement(By.id("user_pass")).sendKeys("123456");
+    driver.findElement(By.id("submit-btn")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='添加链接'])[1]/following::a[1]")).click();
     driver.findElement(By.linkText("全部公告")).click();
     driver.findElement(By.linkText("这是一个公告测试")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_1 | ]]
     driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
-    driver.findElement(By.linkText("这是第二个公告测试")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_2 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='显示'])[2]/following::a[1]")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
-    driver.findElement(By.xpath("//body")).click();
-    // ERROR: Caught exception [unknown command [editContent]]
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='隐藏'])[1]/following::button[1]")).click();
-    driver.findElement(By.linkText("这是第二个公告测试")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_3 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='添加链接'])[1]/following::a[1]")).click();
-    driver.findElement(By.linkText("添加公告")).click();
-    driver.findElement(By.id("title")).click();
-    driver.findElement(By.id("title")).clear();
-    driver.findElement(By.id("title")).sendKeys("这是自动化测试公告");
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
-    driver.findElement(By.xpath("//body")).click();
-    driver.findElement(By.xpath("//body")).click();
-    // ERROR: Caught exception [unknown command [editContent]]
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='*'])[2]/following::i[1]")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
-    // ERROR: Caught exception [unknown command [editContent]]
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)=''])[1]/following::i[1]")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
-    // ERROR: Caught exception [unknown command [editContent]]
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)=''])[1]/following::i[1]")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
-    driver.findElement(By.xpath("//body")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)=''])[1]/following::button[1]")).click();
-    driver.findElement(By.linkText("这是自动化测试公告")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_4 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
   }
 
   @After
@@ -113,6 +79,19 @@ public class BackNoticeFunctions {
       return alertText;
     } finally {
       acceptNextAlert = true;
+    }
+  }
+
+  public static void main(String args[]){
+    String url="http://localhost:8080/";
+    System.setProperty("webdriver.gecko.driver", "src\\test\\geckodriver.exe");
+    BackNoticeFunctions test=new BackNoticeFunctions();
+    try {
+      test.setUp();
+      test.testBackNoticeFunctions();
+      test.tearDown();
+    }catch(Exception e){
+      e.printStackTrace();
     }
   }
 }

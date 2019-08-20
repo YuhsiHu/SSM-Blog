@@ -24,7 +24,16 @@ public class BackLinkFunctions {
 
   @Test
   public void testBackLinkFunctions() throws Exception {
-    driver.get("http://localhost:8080/admin/page");
+    driver.get("http://localhost:8080/");
+    driver.findElement(By.linkText("登录")).click();
+    driver.findElement(By.id("user_login")).click();
+    driver.findElement(By.id("user_login")).clear();
+    driver.findElement(By.id("user_login")).sendKeys("admin");
+    driver.findElement(By.id("loginForm")).click();
+    driver.findElement(By.id("user_pass")).click();
+    driver.findElement(By.id("user_pass")).clear();
+    driver.findElement(By.id("user_pass")).sendKeys("123456");
+    driver.findElement(By.id("submit-btn")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='添加页面'])[1]/following::a[1]")).click();
     driver.findElement(By.linkText("全部链接")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='添加页面'])[1]/following::a[1]")).click();
@@ -42,26 +51,7 @@ public class BackLinkFunctions {
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='添加页面'])[1]/following::a[1]")).click();
     driver.findElement(By.linkText("全部链接")).click();
     driver.findElement(By.linkText("前台")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_1 | ]]
-    driver.findElement(By.linkText("百度")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_2 | ]]
     driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_1 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='显示'])[2]/following::a[1]")).click();
-    driver.findElement(By.name("linkUrl")).click();
-    driver.findElement(By.name("linkUrl")).clear();
-    driver.findElement(By.name("linkUrl")).sendKeys("https://www.jd.com");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='隐藏'])[1]/following::button[1]")).click();
-    driver.findElement(By.linkText("前台")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_3 | ]]
-    driver.findElement(By.linkText("百度")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_4 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_3 | ]]
-    driver.close();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | win_ser_local | ]]
   }
 
   @After
@@ -103,6 +93,18 @@ public class BackLinkFunctions {
       return alertText;
     } finally {
       acceptNextAlert = true;
+    }
+  }
+  public static void main(String args[]){
+    String url="http://localhost:8080/";
+    System.setProperty("webdriver.gecko.driver", "src\\test\\geckodriver.exe");
+    BackLinkFunctions test=new BackLinkFunctions();
+    try {
+      test.setUp();
+      test.testBackLinkFunctions();
+      test.tearDown();
+    }catch(Exception e){
+      e.printStackTrace();
     }
   }
 }

@@ -24,29 +24,22 @@ public class BackLoginAndLogout {
 
   @Test
   public void testBackLoginAndLogout() throws Exception {
-    driver.get("http://localhost:8080/login");
-    driver.findElement(By.xpath("//body")).click();
-    driver.findElement(By.id("rememberme")).click();
-    driver.findElement(By.id("rememberme")).click();
+    driver.get("http://localhost:8080/");
+    driver.findElement(By.linkText("登录")).click();
+    driver.findElement(By.id("user_login")).click();
+    driver.findElement(By.id("user_login")).clear();
+    driver.findElement(By.id("user_login")).sendKeys("admin");
+    driver.findElement(By.id("loginForm")).click();
+    driver.findElement(By.id("user_pass")).click();
+    driver.findElement(By.id("user_pass")).clear();
+    driver.findElement(By.id("user_pass")).sendKeys("123456");
     driver.findElement(By.id("submit-btn")).click();
     driver.findElement(By.linkText("退出")).click();
     driver.findElement(By.id("user_login")).click();
-    driver.findElement(By.id("loginForm")).click();
     driver.findElement(By.id("user_login")).clear();
     driver.findElement(By.id("user_login")).sendKeys("374522830@qq.com");
     driver.findElement(By.id("submit-btn")).click();
     driver.findElement(By.linkText("退出")).click();
-    driver.findElement(By.id("user_login")).clear();
-    driver.findElement(By.id("user_login")).sendKeys("admin");
-    driver.findElement(By.xpath("//body")).click();
-    driver.findElement(By.id("user_pass")).clear();
-    driver.findElement(By.id("user_pass")).sendKeys("12345678");
-    driver.findElement(By.id("submit-btn")).click();
-    assertEquals("密码错误！", closeAlertAndGetItsText());
-    driver.findElement(By.xpath("//body")).click();
-    driver.findElement(By.id("user_pass")).clear();
-    driver.findElement(By.id("user_pass")).sendKeys("123456");
-    driver.findElement(By.id("submit-btn")).click();
   }
 
   @After
@@ -88,6 +81,19 @@ public class BackLoginAndLogout {
       return alertText;
     } finally {
       acceptNextAlert = true;
+    }
+  }
+
+  public static void main(String args[]){
+    String url="http://localhost:8080/";
+    System.setProperty("webdriver.gecko.driver", "src\\test\\geckodriver.exe");
+    BackLoginAndLogout test=new BackLoginAndLogout();
+    try {
+      test.setUp();
+      test.testBackLoginAndLogout();
+      test.tearDown();
+    }catch(Exception e){
+      e.printStackTrace();
     }
   }
 }

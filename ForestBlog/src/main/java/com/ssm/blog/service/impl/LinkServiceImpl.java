@@ -49,4 +49,7 @@ public class LinkServiceImpl implements LinkService {
 		return linkMapper.getLinkById(id);
 	}
 
+	@Override
+	public Link getLinkByLinkName(String linkName) { return linkMapper.getLinkByLinkName(linkName);}
+
 }

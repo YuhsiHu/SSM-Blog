@@ -55,5 +55,12 @@ public interface LinkService {
      */
     Link getLinkById(Integer id);
 
+    /**
+     * 根据linkName查询链接
+     *
+     * @param linName 链接名
+     * @return 链接
+     */
+    Link getLinkByLinkName(String linkName);
 
 }

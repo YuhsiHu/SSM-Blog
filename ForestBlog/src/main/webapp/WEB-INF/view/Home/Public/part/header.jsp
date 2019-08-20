@@ -24,8 +24,8 @@
                 <ul id="menu-topmenu" class="top-menu">
                     <c:forEach items="${menuList}" var="m">
                         <li class="menu-item">
-                        <c:if test="${m.menuLevel==1}">
-                                <a href="${m.menuUrl}" >
+                            <c:if test="${m.menuLevel==1}">
+                                <a href="${m.menuUrl}">
                                     <i class="${m.menuIcon}"></i>
                                     <span class="font-text">${m.menuName}&nbsp;</span>&nbsp;
                                 </a>
@@ -78,7 +78,8 @@
                                             <c:forEach items="${allCategoryList}" var="cate">
                                                 <c:if test="${cate.categoryPid==category.categoryId}">
                                                     <li>
-                                                        <a href="/category/${cate.categoryId}" target="_blank">${cate.categoryName}</a>
+                                                        <a href="/category/${cate.categoryId}"
+                                                           target="_blank">${cate.categoryName}</a>
                                                     </li>
                                                 </c:if>
                                             </c:forEach>
@@ -106,7 +107,8 @@
     </div><!-- #menu-box -->
     <%--主要菜单 satrt--%>
 
-</header><!-- #masthead -->
+</header>
+<!-- #masthead -->
 <%--导航 end start--%>
 
 <%--搜索框 start--%>
@@ -114,7 +116,7 @@
     <div class="searchbar">
         <form method="get" id="searchform" action="/search" accept-charset="UTF-8">
             <span>
-                <input type="text" value="" name="keywords" id="s" placeholder="输入搜索内容"required="">
+                <input type="text" value="" name="keywords" id="s" placeholder="输入搜索内容" required="">
                 <button type="submit" id="searchsubmit">搜索</button>
             </span>
         </form>

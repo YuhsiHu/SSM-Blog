@@ -5,26 +5,30 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
-    <rapid:override name="title">
-        - 标签列表
-    </rapid:override>
+<rapid:override name="title">
+    - 标签列表
+</rapid:override>
 <rapid:override name="header-style">
     <style>
         /*覆盖 layui*/
         .layui-input-block {
-            margin:0px 10px;
+            margin: 0px 10px;
         }
+
         .layui-table {
             margin-top: 0;
         }
+
         .layui-col-md4 {
-            padding:10px;
+            padding: 10px;
         }
+
         .layui-col-md8 {
-            padding:10px;
+            padding: 10px;
         }
+
         .layui-btn {
-            margin: 2px 0!important;
+            margin: 2px 0 !important;
         }
     </style>
 </rapid:override>
@@ -42,19 +46,21 @@
         <div class="layui-col-md4">
 
             <!-- 添加标签 -->
-            <form class="layui-form"  method="post" id="myForm" action="/admin/tag/insertSubmit">
+            <form class="layui-form" method="post" id="myForm" action="/admin/tag/insertSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <strong>添加标签</strong>
                     </div>
                     <div class="layui-input-block">
                         名称 <span style="color: #FF5722; ">*</span>
-                        <input type="text" name="tagName" placeholder="请输入标签名称" autocomplete="off" class="layui-input" required>
+                        <input type="text" name="tagName" placeholder="请输入标签名称" autocomplete="off" class="layui-input"
+                               required>
                     </div>
                     <br>
                     <div class="layui-input-block">
                         标签描述
-                        <input type="text" name="tagDescription" placeholder="请输入标签描述" autocomplete="off" class="layui-input" >
+                        <input type="text" name="tagDescription" placeholder="请输入标签描述" autocomplete="off"
+                               class="layui-input">
                     </div>
                     <br>
                     <div class="layui-input-block">
@@ -73,9 +79,9 @@
         </div>
 
         <!-- 标签列表 -->
-        <div class="layui-col-md8" >
+        <div class="layui-col-md8">
 
-            <table class="layui-table" >
+            <table class="layui-table">
                 <colgroup>
                     <col width="300">
                     <col width="50">
@@ -97,17 +103,18 @@
                         <td>
                             <a href="/tag/${c.tagId}" target="_blank">${c.tagName}</a>
                         </td>
-                        <td >
-                            <a href="/tag/${c.tagId}" target="_blank"  lay-data="{sort:true}">${c.articleCount}</a>
+                        <td>
+                            <a href="/tag/${c.tagId}" target="_blank" lay-data="{sort:true}">${c.articleCount}</a>
                         </td>
                         <td>
                             <a href="/admin/tag/edit/${c.tagId}" class="layui-btn layui-btn-mini">编辑</a>
                             <c:if test="${c.articleCount==0}">
-                                <a href="/admin/tag/delete/${c.tagId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                <a href="/admin/tag/delete/${c.tagId}" class="layui-btn layui-btn-danger layui-btn-mini"
+                                   onclick="return confirmDelete()">删除</a>
                             </c:if>
 
                         </td>
-                        <td >${c.tagId}</td>
+                        <td>${c.tagId}</td>
                     </tr>
 
                 </c:forEach>
@@ -124,7 +131,6 @@
     </div>
 
 
-
 </rapid:override>
 <rapid:override name="footer-script">
     <script>
@@ -132,4 +138,4 @@
     </script>
 </rapid:override>
 
-<%@ include file="../Public/framework.jsp"%>
+<%@ include file="../Public/framework.jsp" %>

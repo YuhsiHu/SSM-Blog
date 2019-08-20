@@ -5,9 +5,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
-    <rapid:override name="title">
-        - 编辑公告
-    </rapid:override>
+<rapid:override name="title">
+    - 编辑公告
+</rapid:override>
 <rapid:override name="header-style">
     <style>
 
@@ -25,21 +25,23 @@
     </blockquote>
 
     <!-- 编辑公告 -->
-    <form class="layui-form"  method="post" id="myForm" action="/admin/notice/editSubmit">
+    <form class="layui-form" method="post" id="myForm" action="/admin/notice/editSubmit">
         <input type="hidden" name="noticeId" value="${notice.noticeId}">
         <!-- 公告标题 -->
         <div class="layui-form-item">
-            <label class="layui-form-label">标题  <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">标题 <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
-                <input type="text" name="noticeTitle" lay-verify="title" id="title" value="${notice.noticeTitle}" class="layui-input" required>
+                <input type="text" name="noticeTitle" lay-verify="title" id="title" value="${notice.noticeTitle}"
+                       class="layui-input" required>
             </div>
         </div>
 
         <!-- 公告内容 -->
         <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">内容  <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">内容 <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
-                <textarea class="layui-textarea layui-hide" name="noticeContent" id="content" required>${notice.noticeContent}</textarea>
+                <textarea class="layui-textarea layui-hide" name="noticeContent" id="content"
+                          required>${notice.noticeContent}</textarea>
             </div>
         </div>
 
@@ -47,7 +49,8 @@
         <div class="layui-form-item">
             <label class="layui-form-label">Order </label>
             <div class="layui-input-inline">
-                <input type="number" name="noticeOrder" value="${notice.noticeOrder}"class="layui-input" min="0" max="10" >
+                <input type="number" name="noticeOrder" value="${notice.noticeOrder}" class="layui-input" min="0"
+                       max="10">
             </div>
             <div class="layui-form-mid layui-word-aux">输入1-10的数字,order越大排序越前</div>
         </div>
@@ -56,8 +59,10 @@
         <div class="layui-form-item">
             <label class="layui-form-label">状态</label>
             <div class="layui-input-block">
-                <input type="radio" name="noticeStatus" value="1" title="显示" <c:if test="${notice.noticeStatus==1}">checked</c:if>>
-                <input type="radio" name="noticeStatus" value="0" title="隐藏" <c:if test="${notice.noticeStatus==0}">checked</c:if>>
+                <input type="radio" name="noticeStatus" value="1" title="显示"
+                       <c:if test="${notice.noticeStatus==1}">checked</c:if>>
+                <input type="radio" name="noticeStatus" value="0" title="隐藏"
+                       <c:if test="${notice.noticeStatus==0}">checked</c:if>>
             </div>
         </div>
 
@@ -73,7 +78,7 @@
 </rapid:override>
 <rapid:override name="footer-script">
     <script>
-        layui.use(['form', 'layedit', 'laydate'], function() {
+        layui.use(['form', 'layedit', 'laydate'], function () {
             var form = layui.form
                 , layer = layui.layer
                 , layedit = layui.layedit
@@ -84,13 +89,13 @@
             layedit.set({
                 uploadImage: {
                     url: '/admin/upload/img' //接口url
-                    ,type: 'post' //默认post
+                    , type: 'post' //默认post
                 }
             });
 
             //创建一个编辑器
-            var editIndex = layedit.build('content',{
-                    height:350,
+            var editIndex = layedit.build('content', {
+                    height: 350,
                 }
             );
 
@@ -99,4 +104,4 @@
     </script>
 </rapid:override>
 
-<%@ include file="../Public/framework.jsp"%>
+<%@ include file="../Public/framework.jsp" %>
